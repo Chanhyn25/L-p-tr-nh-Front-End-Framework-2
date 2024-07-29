@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "email": "nhi@gmail.com",
+      "password": "$2a$10$qxWcN2sMLRA8FK0YDUF3dea3SzHdg2BljA8z2feaEZokMlRj0sVQK",
+      "role": 1,
+      "id": 2
+    },
+    {
+      "email": "nhi1@gmail.com",
+      "password": "$2a$10$A.TBXsIoyffiS8Eo7sd1vuR76eV7Fp35ahl9ZWaw3sF96tJ2WVse2",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Hello World",
+      "image": "This is a sample post",
+      "description": "This is a sample",
+      "quantity": 100,
+      "price": 100000
+    }
+  ],
+  "cart": [],
+  "orders": []
+}
