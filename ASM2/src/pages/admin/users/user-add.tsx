@@ -1,54 +1,99 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import UserService from "../../../services/repositories/users/UserService";
+import { User } from "../../../interfaces/user";
 
-// Define a type for form data
-interface ProductFormData {
-    name: string;
-    image: string;
-    price: string;
-    quality: number;
-    description: string;
-}
+const UserCreatePage: React.FC = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
+  const [role, setRole] = useState("0");
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
-// Define props for the component
-interface AddProductPageProps {
-    onAdd: (product: ProductFormData) => void;
-}
-
-const AddProductPage: React.FC<AddProductPageProps> = ({ onAdd }) => {
-    const { register, handleSubmit } = useForm<ProductFormData>();
-    const navigate = useNavigate();
-
-    const onSubmit: SubmitHandler<ProductFormData> = (data) => {
-        onAdd(data);
-        navigate('/admin/products');
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      const newUser: User = {
+        id: Date.now().toString(),
+        email,
+        password,
+        confirmPass,
+        role,
+      };
+      await UserService.createUser(newUser);
+      setSuccess("User created successfully");
+      setPassword("");
+      setEmail("");
+    } catch (error) {
+      setError("Failed to create user");
     }
+  };
 
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-3 mt-5">
-                <label htmlFor="productName" className="form-label">Tên sản phẩm</label>
-                <input type="text" {...register("name")} className="form-control" id="productName" />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="productImage" className="form-label">Ảnh sản phẩm</label>
-                <input type="text" {...register("image")} className="form-control" id="productImage" />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="productPrice" className="form-label">Giá sản phẩm</label>
-                <input type="text" {...register("price")} className="form-control" id="productPrice" />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="productQuality" className="form-label">Số lượng</label>
-                <input type="number" {...register("quality")} className="form-control" id="productQuality" />
-            </div>
-            <div className="mb-3 mt-5">
-                <label htmlFor="productDesc" className="form-label">Mô tả</label>
-                <textarea className="form-control" id="productDesc" {...register("description")} cols={30} rows={10}></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-    )
-}
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Create User</h1>
+      {error && <p className="text-red-500 mb-4">{error}</p>}
+      {success && <p className="text-green-500 mb-4">{success}</p>}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Email:
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Password:
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Confirm Password:
+          </label>
+          <input
+            type="password"
+            value={confirmPass}
+            onChange={(e) => setConfirmPass(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Role:
+          </label>
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+            required
+          >
+            <option value="0">User</option>
+            <option value="1">Admin</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Create
+        </button>
+      </form>
+    </div>
+  );
+};
 
-export default AddProductPage;
+export default UserCreatePage;
