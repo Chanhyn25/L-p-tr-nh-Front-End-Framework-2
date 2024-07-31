@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import { useParams, useNavigate } from "react-router-dom";
 import ProductService from "../../../services/repositories/products/Product";
+import { User } from "../../../interfaces/user";
 
 const ProductEdit: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -14,26 +15,35 @@ const ProductEdit: React.FC = () => {
   const [success, setSuccess] = useState<string | null>(null);
 
   const { id } = useParams();
-  const navigate = useNavigate();
+  const nav = useNavigate();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      if (id) {
-        try {
-          const product = await ProductService.getProductById(Number(id));
-          setName(product.name);
-          setImage(product.image);
-          setDescription(product.description);
-          setQuantity(product.quantity);
-          setPrice(product.price);
-        } catch (error) {
-          console.error("Error fetching product:", error);
-          setError("Failed to fetch product");
-        }
-      }
-    };
+    const userString = localStorage.getItem("user");
 
-    fetchProduct();
+    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      const fetchProduct = async () => {
+        if (id) {
+          try {
+            const product = await ProductService.getProductById(Number(id));
+            setName(product.name);
+            setImage(product.image);
+            setDescription(product.description);
+            setQuantity(product.quantity);
+            setPrice(product.price);
+          } catch (error) {
+            console.error("Error fetching product:", error);
+            setError("Failed to fetch product");
+          }
+        }
+      };
+
+      fetchProduct();
+    } else if (!user) {
+      nav("/login");
+    } else {
+      nav("/");
+    }
   }, [id]);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -47,7 +57,7 @@ const ProductEdit: React.FC = () => {
         price,
       });
       setSuccess("Product updated successfully");
-      navigate("/admin/products");
+      nav("/admin/products");
     } catch (error) {
       setError("Failed to update product");
       console.error(error);

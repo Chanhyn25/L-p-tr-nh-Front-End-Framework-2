@@ -1,8 +1,9 @@
 // src/pages/ProductCreate.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Product } from "../../../interfaces/product";
 import { useNavigate } from "react-router-dom";
 import ProductService from "../../../services/repositories/products/Product";
+import { User } from "../../../interfaces/user";
 
 const ProductCreate: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -13,7 +14,17 @@ const ProductCreate: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const navigate = useNavigate();
+  const nav = useNavigate();
+  useEffect(() => {
+    const userString = localStorage.getItem("user");
+
+    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      nav("/admin");
+    } else if (!user) {
+      nav("/login");
+    }
+  }, [nav]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -33,7 +44,7 @@ const ProductCreate: React.FC = () => {
       setDescription("");
       setQuantity(0);
       setPrice(0);
-      navigate("/admin/products");
+      nav("/admin/products");
     } catch (error) {
       setError("Failed to create product");
       console.error(error);

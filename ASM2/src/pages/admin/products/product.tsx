@@ -1,4 +1,3 @@
-// src/pages/ProductManagement.tsx
 import React, { useState, useEffect } from "react";
 import {
   Table,
@@ -12,41 +11,79 @@ import {
   InputAdornment,
   IconButton,
   Button,
+  TableSortLabel, // Import TableSortLabel
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { Product } from "../../../interfaces/product";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductService from "../../../services/repositories/products/Product";
+import { User } from "../../../interfaces/user";
 
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [search, setSearch] = useState("");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [sortColumn, setSortColumn] = useState<keyof Product>("name");
+  const nav = useNavigate();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await ProductService.getProducts();
-        setProducts(response);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
+    const userString = localStorage.getItem("user");
+    const user: User | null = userString ? JSON.parse(userString) : null;
 
-    fetchProducts();
-  }, []);
+    if (user?.role === 1) {
+      const fetchProducts = async () => {
+        try {
+          const response = await ProductService.getProducts();
+          setProducts(response);
+        } catch (error) {
+          console.error("Error fetching products:", error);
+        }
+      };
+
+      fetchProducts();
+    } else if (!user) {
+      nav("/login");
+    } else {
+      nav("/");
+    }
+  }, [nav]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
+  const handleSort = (column: keyof Product) => {
+    const isAscending = sortColumn === column && sortDirection === "asc";
+    setSortColumn(column);
+    setSortDirection(isAscending ? "desc" : "asc");
+  };
+
   const filteredProducts = products.filter((product) => {
     const lowercasedSearch = search.toLowerCase();
     const nameMatches = product.name.toLowerCase().includes(lowercasedSearch);
-    return nameMatches;
+    const descriptionMatches = product.description
+      .toLowerCase()
+      .includes(lowercasedSearch);
+    return nameMatches || descriptionMatches;
+  });
+
+  const sortedProducts = filteredProducts.sort((a, b) => {
+    const aValue = a[sortColumn];
+    const bValue = b[sortColumn];
+
+    if (typeof aValue === "string" && typeof bValue === "string") {
+      return sortDirection === "asc"
+        ? aValue.localeCompare(bValue)
+        : bValue.localeCompare(aValue);
+    } else {
+      return sortDirection === "asc"
+        ? (aValue as number) - (bValue as number)
+        : (bValue as number) - (aValue as number);
+    }
   });
 
   const handleChangePage = (
@@ -103,18 +140,68 @@ const ProductPage: React.FC = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Description</TableCell>
-              <TableCell>Quantity</TableCell>
-              <TableCell>Price</TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={sortColumn === "image"}
+                  direction={sortColumn === "image" ? sortDirection : "asc"}
+                  onClick={() => handleSort("image")}
+                >
+                  Image
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={sortColumn === "name"}
+                  direction={sortColumn === "name" ? sortDirection : "asc"}
+                  onClick={() => handleSort("name")}
+                >
+                  Name
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={sortColumn === "description"}
+                  direction={
+                    sortColumn === "description" ? sortDirection : "asc"
+                  }
+                  onClick={() => handleSort("description")}
+                >
+                  Description
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={sortColumn === "quantity"}
+                  direction={sortColumn === "quantity" ? sortDirection : "asc"}
+                  onClick={() => handleSort("quantity")}
+                >
+                  Quantity
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={sortColumn === "price"}
+                  direction={sortColumn === "price" ? sortDirection : "asc"}
+                  onClick={() => handleSort("price")}
+                >
+                  Price
+                </TableSortLabel>
+              </TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredProducts
+            {sortedProducts
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((product) => (
                 <TableRow key={product.id}>
+                  <TableCell>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      style={{ width: "100px", height: "auto" }}
+                    />
+                  </TableCell>
                   <TableCell>{product.name}</TableCell>
                   <TableCell>{product.description}</TableCell>
                   <TableCell>{product.quantity}</TableCell>
@@ -140,7 +227,7 @@ const ProductPage: React.FC = () => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 50]}
         component="div"
-        count={filteredProducts.length}
+        count={sortedProducts.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

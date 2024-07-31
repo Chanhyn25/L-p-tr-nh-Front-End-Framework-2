@@ -14,7 +14,7 @@ class UserService {
   }
 
   // Get a single user by ID
-  public static async getUserById(id: string): Promise<User> {
+  public static async getUserById(id: number): Promise<User> {
     try {
       const response = await instance.get<User>(`/users/${id}`);
       return response.data;
@@ -37,7 +37,7 @@ class UserService {
 
   // Update an existing user
   public static async updateUser(
-    id: string,
+    id: number,
     updatedUser: Partial<User>
   ): Promise<User> {
     try {

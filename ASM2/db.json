@@ -3,25 +3,397 @@
     {
       "email": "nhi@gmail.com",
       "password": "$2a$10$qxWcN2sMLRA8FK0YDUF3dea3SzHdg2BljA8z2feaEZokMlRj0sVQK",
+      "name": "name1",
       "role": 1,
       "id": 2
     },
     {
       "email": "nhi1@gmail.com",
       "password": "$2a$10$A.TBXsIoyffiS8Eo7sd1vuR76eV7Fp35ahl9ZWaw3sF96tJ2WVse2",
-      "id": 3
+      "id": 3,
+      "name": "name2"
+    },
+    {
+      "email": "hanhbabe@gmail.com",
+      "password": "$2a$10$AR3JfD7IKbNZXlwUzwPKE.veh4OPX.mqDAZBWlcN0s1.Bn8Wn1bn.",
+      "id": 4
+    },
+    {
+      "email": "phunhph33261@fpt.edu.vn",
+      "password": "$2a$10$RRG8fvHF1Zr0nc.zFXupOe/EriXiBF.dCxeuB/m00jQYSXeZucScO",
+      "id": 5
+    },
+    {
+      "email": "myanh419@gmail.com",
+      "password": "$2a$10$89XowpWltR0wCdEydGBtEOTLLNYtlsHmqq74pl0vtYuP4DML6r48e",
+      "id": 6
+    },
+    {
+      "email": "myanhnguyen419@gmail.com",
+      "password": "$2a$10$rFtHOy1uJnzOsCCNEQJiM.mPasTHVomvCaYFXSXc9i2p2jpkI4y5G",
+      "id": 7
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Hello World",
-      "image": "This is a sample post",
-      "description": "This is a sample",
-      "quantity": 100,
-      "price": 100000
+      "name": "Product 1",
+      "description": "Description for Product 1",
+      "quantity": 32,
+      "price": 236,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "Description for Product 2",
+      "quantity": 24,
+      "price": 192,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "Description for Product 3",
+      "quantity": 1,
+      "price": 216,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "description": "Description for Product 4",
+      "quantity": 74,
+      "price": 105,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
+      "description": "Description for Product 5",
+      "quantity": 22,
+      "price": 79,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 6,
+      "name": "Product 6",
+      "description": "Description for Product 6",
+      "quantity": 29,
+      "price": 81,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 7,
+      "name": "Product 7",
+      "description": "Description for Product 7",
+      "quantity": 45,
+      "price": 88,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 8,
+      "name": "Product 8",
+      "description": "Description for Product 8",
+      "quantity": 25,
+      "price": 234,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 9,
+      "name": "Product 9",
+      "description": "Description for Product 9",
+      "quantity": 55,
+      "price": 128,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 10,
+      "name": "Product 10",
+      "description": "Description for Product 10",
+      "quantity": 95,
+      "price": 81,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 11,
+      "name": "Product 11",
+      "description": "Description for Product 11",
+      "quantity": 54,
+      "price": 198,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 12,
+      "name": "Product 12",
+      "description": "Description for Product 12",
+      "quantity": 57,
+      "price": 87,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 13,
+      "name": "Product 13",
+      "description": "Description for Product 13",
+      "quantity": 40,
+      "price": 248,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 14,
+      "name": "Product 14",
+      "description": "Description for Product 14",
+      "quantity": 1,
+      "price": 120,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 15,
+      "name": "Product 15",
+      "description": "Description for Product 15",
+      "quantity": 96,
+      "price": 130,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 16,
+      "name": "Product 16",
+      "description": "Description for Product 16",
+      "quantity": 83,
+      "price": 217,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 17,
+      "name": "Product 17",
+      "description": "Description for Product 17",
+      "quantity": 82,
+      "price": 53,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 18,
+      "name": "Product 18",
+      "description": "Description for Product 18",
+      "quantity": 87,
+      "price": 127,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 19,
+      "name": "Product 19",
+      "description": "Description for Product 19",
+      "quantity": 8,
+      "price": 114,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 20,
+      "name": "Product 20",
+      "description": "Description for Product 20",
+      "quantity": 12,
+      "price": 174,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 21,
+      "name": "Product 21",
+      "description": "Description for Product 21",
+      "quantity": 58,
+      "price": 77,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 22,
+      "name": "Product 22",
+      "description": "Description for Product 22",
+      "quantity": 55,
+      "price": 143,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 23,
+      "name": "Product 23",
+      "description": "Description for Product 23",
+      "quantity": 52,
+      "price": 131,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 24,
+      "name": "Product 24",
+      "description": "Description for Product 24",
+      "quantity": 82,
+      "price": 105,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 25,
+      "name": "Product 25",
+      "description": "Description for Product 25",
+      "quantity": 40,
+      "price": 94,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 26,
+      "name": "Product 26",
+      "description": "Description for Product 26",
+      "quantity": 29,
+      "price": 51,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "name": "Product 27 edit",
+      "image": "https://via.placeholder.com/100?text=Product+1",
+      "description": "Description for Product 27",
+      "quantity": 37,
+      "price": 144,
+      "id": 27
+    },
+    {
+      "id": 28,
+      "name": "Product 28",
+      "description": "Description for Product 28",
+      "quantity": 42,
+      "price": 237,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 29,
+      "name": "Product 29",
+      "description": "Description for Product 29",
+      "quantity": 75,
+      "price": 232,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 30,
+      "name": "Product 30",
+      "description": "Description for Product 30",
+      "quantity": 55,
+      "price": 215,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 31,
+      "name": "Product 31",
+      "description": "Description for Product 31",
+      "quantity": 8,
+      "price": 115,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 32,
+      "name": "Product 32",
+      "description": "Description for Product 32",
+      "quantity": 59,
+      "price": 201,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 33,
+      "name": "Product 33",
+      "description": "Description for Product 33",
+      "quantity": 24,
+      "price": 149,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 34,
+      "name": "Product 34",
+      "description": "Description for Product 34",
+      "quantity": 55,
+      "price": 81,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 35,
+      "name": "Product 35",
+      "description": "Description for Product 35",
+      "quantity": 65,
+      "price": 122,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 36,
+      "name": "Product 36",
+      "description": "Description for Product 36",
+      "quantity": 41,
+      "price": 168,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 37,
+      "name": "Product 37",
+      "description": "Description for Product 37",
+      "quantity": 18,
+      "price": 75,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 38,
+      "name": "Product 38",
+      "description": "Description for Product 38",
+      "quantity": 48,
+      "price": 149,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 39,
+      "name": "Product 39",
+      "description": "Description for Product 39",
+      "quantity": 35,
+      "price": 73,
+      "image": "https://via.placeholder.com/100?text=Product+1"
+    },
+    {
+      "id": 40,
+      "name": "Product 40",
+      "description": "Description for Product 40",
+      "quantity": 30,
+      "price": 214,
+      "image": "https://via.placeholder.com/100?text=Product+1"
     }
   ],
   "cart": [],
-  "orders": []
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "quantity": 3,
+      "total": 150,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "quantity": 1,
+      "total": 50,
+      "status": 1
+    }
+  ],
+  "orderDetails": [
+    {
+      "id": 1,
+      "id_order": 1,
+      "product_id": 1,
+      "quantity": 2,
+      "total": 100
+    },
+    {
+      "id": 2,
+      "id_order": 1,
+      "product_id": 2,
+      "quantity": 1,
+      "total": 50
+    },
+    {
+      "id": 3,
+      "id_order": 2,
+      "product_id": 1,
+      "quantity": 1,
+      "total": 50
+    }
+  ]
 }

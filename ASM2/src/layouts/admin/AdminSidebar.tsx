@@ -38,6 +38,14 @@ const AdminSidebar: React.FC = () => {
               Orders
             </Link>
           </li>
+          <li>
+            <Link
+              to="/logout"
+              className="block p-2 text-gray-700 hover:bg-gray-300 rounded"
+            >
+              Logout
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>

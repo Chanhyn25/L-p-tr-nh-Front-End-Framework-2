@@ -28,8 +28,6 @@ const LoginPage = ({ isLogin }: Props) => {
       nav("/admin");
     } else if (user) {
       nav("/");
-    } else {
-      nav("/login");
     }
   }, [nav]);
 
@@ -42,7 +40,7 @@ const LoginPage = ({ isLogin }: Props) => {
         if (res) {
           localStorage.setItem("user", JSON.stringify(res.data.user));
           localStorage.setItem("accessToken", res.data.accessToken);
-          if (res.data.role) {
+          if (res.data.user.role == "1") {
             nav("/admin");
           } else {
             nav("/");
@@ -65,94 +63,116 @@ const LoginPage = ({ isLogin }: Props) => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg"
-      >
-        <h1 className="text-2xl font-bold mb-6 text-center">
-          {isLogin ? "Login" : "Register"}
-        </h1>
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-              errors.email
-                ? "border-red-500 focus:ring-red-500"
-                : "border-gray-300 focus:ring-indigo-500"
-            }`}
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && (
-            <span className="text-red-500 text-sm">{errors.email.message}</span>
-          )}
-        </div>
-
-        <div className="mb-4">
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-              errors.password
-                ? "border-red-500 focus:ring-red-500"
-                : "border-gray-300 focus:ring-indigo-500"
-            }`}
-            {...register("password", { required: "Password is required" })}
-          />
-          {errors.password && (
-            <span className="text-red-500 text-sm">
-              {errors.password.message}
-            </span>
-          )}
-        </div>
-
-        {!isLogin && (
+      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1 className="text-2xl font-bold mb-6 text-center">
+            {isLogin ? "Login" : "Register"}
+          </h1>
           <div className="mb-4">
             <label
-              htmlFor="confirmPass"
+              htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Confirm Password
+              Email
             </label>
             <input
-              type="password"
-              id="confirmPass"
+              type="email"
+              id="email"
               className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-                errors.confirmPass
+                errors.email
                   ? "border-red-500 focus:ring-red-500"
                   : "border-gray-300 focus:ring-indigo-500"
               }`}
-              {...register("confirmPass", {
-                required: "Confirm Password is required",
-              })}
+              {...register("email", { required: "Email is required" })}
             />
-            {errors.confirmPass && (
+            {errors.email && (
               <span className="text-red-500 text-sm">
-                {errors.confirmPass.message}
+                {errors.email.message}
               </span>
             )}
           </div>
-        )}
 
-        <button
-          type="submit"
-          className="w-full py-2 px-4 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        >
-          {isLogin ? "Login" : "Register"}
-        </button>
-      </form>
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
+                errors.password
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-gray-300 focus:ring-indigo-500"
+              }`}
+              {...register("password", { required: "Password is required" })}
+            />
+            {errors.password && (
+              <span className="text-red-500 text-sm">
+                {errors.password.message}
+              </span>
+            )}
+          </div>
+
+          {!isLogin && (
+            <div className="mb-4">
+              <label
+                htmlFor="confirmPass"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPass"
+                className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
+                  errors.confirmPass
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-indigo-500"
+                }`}
+                {...register("confirmPass", {
+                  required: "Confirm Password is required",
+                })}
+              />
+              {errors.confirmPass && (
+                <span className="text-red-500 text-sm">
+                  {errors.confirmPass.message}
+                </span>
+              )}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            {isLogin ? "Login" : "Register"}
+          </button>
+        </form>
+        <div className="mt-4 text-center">
+          <span className="text-gray-700">
+            {isLogin ? "Don't have an account?" : "Already have an account?"}
+          </span>
+          <a
+            href={isLogin ? "/register" : "/login"}
+            className="ml-1 text-indigo-600 hover:text-indigo-700 font-bold"
+          >
+            {isLogin ? "Register" : "Login"}
+          </a>
+          {isLogin && (
+            <div className="mt-2">
+              <a
+                href="/forgot-password"
+                className="text-indigo-600 hover:text-indigo-700 font-bold"
+              >
+                Forgot Password?
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

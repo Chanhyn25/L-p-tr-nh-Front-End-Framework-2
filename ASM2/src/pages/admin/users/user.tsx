@@ -11,8 +11,10 @@ import {
   InputAdornment,
   Button,
   IconButton,
+  TableSortLabel,
+  CircularProgress,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Edit as EditIcon, Delete as DeleteIcon } from "@mui/icons-material";
 import { User } from "../../../interfaces/user";
 import UserService from "../../../services/repositories/users/UserService";
@@ -23,26 +25,42 @@ const UserPage: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [sortColumn, setSortColumn] = useState<keyof User>("name");
+  const nav = useNavigate();
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      setLoading(true);
-      try {
-        const response = await UserService.getUsers();
-        if (Array.isArray(response)) {
-          setUsers(response);
-        } else {
-          console.error("Unexpected data format:", response);
-        }
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const userString = localStorage.getItem("user");
 
-    fetchUsers();
-  }, []);
+    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      const fetchUsers = async () => {
+        setLoading(true);
+        try {
+          const response = await UserService.getUsers();
+          if (Array.isArray(response)) {
+            setUsers(response);
+          } else {
+            console.error("Unexpected data format:", response);
+          }
+        } catch (error) {
+          console.error("Error fetching users:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchUsers();
+    } else if (!user) {
+      nav("/login");
+    }
+  }, [nav]);
+
+  const handleSort = (column: keyof User) => {
+    const isAscending = sortColumn === column && sortDirection === "asc";
+    setSortColumn(column);
+    setSortDirection(isAscending ? "desc" : "asc");
+  };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -59,7 +77,25 @@ const UserPage: React.FC = () => {
 
   const filteredUsers = users.filter((user) => {
     const lowercasedSearch = search.toLowerCase();
-    return (user.email ?? "").toLowerCase().includes(lowercasedSearch);
+    return (
+      (user.email ?? "").toLowerCase().includes(lowercasedSearch) ||
+      (user.name ?? "").toLowerCase().includes(lowercasedSearch)
+    );
+  });
+
+  const sortedUser = filteredUsers.sort((a, b) => {
+    const aValue = a[sortColumn];
+    const bValue = b[sortColumn];
+
+    if (typeof aValue === "string" && typeof bValue === "string") {
+      return sortDirection === "asc"
+        ? aValue.localeCompare(bValue)
+        : bValue.localeCompare(aValue);
+    } else {
+      return sortDirection === "asc"
+        ? (aValue as number) - (bValue as number)
+        : (bValue as number) - (aValue as number);
+    }
   });
 
   const handleChangePage = (
@@ -104,24 +140,52 @@ const UserPage: React.FC = () => {
         </Button>
       </div>
       {loading ? (
-        <div>Loading...</div>
+        <div className="flex justify-center items-center h-60">
+          <CircularProgress />
+        </div>
       ) : (
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>ID</TableCell>
-                <TableCell>Email</TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "id"}
+                    direction={sortColumn === "id" ? sortDirection : "asc"}
+                    onClick={() => handleSort("id")}
+                  >
+                    ID
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "email"}
+                    direction={sortColumn === "email" ? sortDirection : "asc"}
+                    onClick={() => handleSort("email")}
+                  >
+                    Email
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "name"}
+                    direction={sortColumn === "name" ? sortDirection : "asc"}
+                    onClick={() => handleSort("name")}
+                  >
+                    Name
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredUsers
+              {sortedUser
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
                   <TableRow key={user.id}>
                     <TableCell>{user.id}</TableCell>
                     <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.name}</TableCell>
                     <TableCell>
                       <IconButton
                         component={Link}

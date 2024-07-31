@@ -4,8 +4,8 @@ import UserService from "../../../services/repositories/users/UserService";
 import { User } from "../../../interfaces/user";
 
 const UserEditPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>(); // `id` là chuỗi
+  const nav = useNavigate();
 
   const [user, setUser] = useState<User | null>(null);
   const [password, setPassword] = useState("");
@@ -13,23 +13,30 @@ const UserEditPage: React.FC = () => {
   const [role, setRole] = useState<string>("0");
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        if (id) {
-          const fetchedUser = await UserService.getUserById(id);
-          setUser(fetchedUser);
-          if (fetchedUser) {
-            setRole(fetchedUser.role?.toString() || "0");
-          }
-        }
-      } catch (error) {
-        setError("Failed to fetch user");
-      }
-    };
+    const userString = localStorage.getItem("user");
 
-    fetchUser();
+    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      const fetchUser = async () => {
+        try {
+          const numericId = id ? parseInt(id, 10) : undefined; // Chuyển đổi id từ chuỗi sang số
+          if (numericId !== undefined) {
+            const fetchedUser = await UserService.getUserById(numericId);
+            setUser(fetchedUser);
+            if (fetchedUser) {
+              setRole(fetchedUser.role?.toString() || "0");
+            }
+          }
+        } catch (error) {
+          setError("Failed to fetch user");
+        }
+      };
+
+      fetchUser();
+    } else if (!user) {
+      nav("/login");
+    }
   }, [id]);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -42,18 +49,15 @@ const UserEditPage: React.FC = () => {
       const updatedUser: User = {
         ...user!,
         password: password || user?.password || "",
-        confirmPass: password || user?.confirmPass || "",
         role: role || "0",
       };
-      if (id) {
-        await UserService.updateUser(id, updatedUser);
+      const numericId = id ? parseInt(id, 10) : undefined;
+      if (numericId !== undefined) {
+        await UserService.updateUser(numericId, updatedUser);
         setSuccess("User updated successfully");
         setError(null);
-        navigate("/admin/users");
+        nav("/admin/users");
       }
-      setSuccess("User updated successfully");
-      setError(null);
-      navigate("/admin/users"); // Redirect to the users list or any other page
     } catch (error) {
       setError("Failed to update user");
     }
@@ -81,7 +85,18 @@ const UserEditPage: React.FC = () => {
           </label>
           <input
             type="email"
-            value={user.email || ""} // Ensure value is a string
+            value={user.email || ""} // Đảm bảo giá trị là chuỗi
+            readOnly
+            className="border rounded px-3 py-2 w-full bg-gray-100 cursor-not-allowed"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Name:
+          </label>
+          <input
+            type="text"
+            value={user.name || ""} // Đảm bảo giá trị là chuỗi
             readOnly
             className="border rounded px-3 py-2 w-full bg-gray-100 cursor-not-allowed"
           />

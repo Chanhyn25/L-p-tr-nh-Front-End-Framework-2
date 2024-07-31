@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserService from "../../../services/repositories/users/UserService";
 import { User } from "../../../interfaces/user";
+import { useNavigate } from "react-router-dom";
 
 const UserCreatePage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [role, setRole] = useState("0");
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const nav = useNavigate();
+  useEffect(() => {
+    const userString = localStorage.getItem("user");
 
+    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      nav("/admin");
+    } else if (!user) {
+      nav("/login");
+    }
+  }, [nav]);
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       const newUser: User = {
-        id: Date.now().toString(),
+        id: Number(Date.now()),
         email,
+        name,
         password,
         confirmPass,
         role,
       };
+
       await UserService.createUser(newUser);
       setSuccess("User created successfully");
       setPassword("");
@@ -43,6 +57,18 @@ const UserCreatePage: React.FC = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="border rounded px-3 py-2 w-full"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Name:
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="border rounded px-3 py-2 w-full"
             required
           />
