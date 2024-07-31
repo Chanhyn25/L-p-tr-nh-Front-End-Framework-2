@@ -34,6 +34,16 @@
       "id": 7
     }
   ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "category 1"
+    },
+    {
+      "id": 2,
+      "name": "category 2"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -41,7 +51,8 @@
       "description": "Description for Product 1",
       "quantity": 32,
       "price": 236,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/09.jpg"
     },
     {
       "id": 2,
@@ -49,7 +60,8 @@
       "description": "Description for Product 2",
       "quantity": 24,
       "price": 192,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/1-15.png"
     },
     {
       "id": 3,
@@ -57,7 +69,8 @@
       "description": "Description for Product 3",
       "quantity": 1,
       "price": 216,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-Shell-I-Sofa-xanh-la.png"
     },
     {
       "id": 4,
@@ -65,7 +78,8 @@
       "description": "Description for Product 4",
       "quantity": 74,
       "price": 105,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-Sofa-Semina-xam-den.png"
     },
     {
       "id": 5,
@@ -73,7 +87,8 @@
       "description": "Description for Product 5",
       "quantity": 22,
       "price": 79,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-Sofa-Semina-xam-nau.png"
     },
     {
       "id": 6,
@@ -81,7 +96,7 @@
       "description": "Description for Product 6",
       "quantity": 29,
       "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/10-Sofa-Semina-xam-nhat-den.png"
     },
     {
       "id": 7,
@@ -89,7 +104,8 @@
       "description": "Description for Product 7",
       "quantity": 45,
       "price": 88,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-Sofa-Semina.png"
     },
     {
       "id": 8,
@@ -97,15 +113,17 @@
       "description": "Description for Product 8",
       "quantity": 25,
       "price": 234,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-UNI-165x93x62-be-toffee_e-1.png"
     },
     {
       "id": 9,
       "name": "Product 9",
       "description": "Description for Product 9",
       "quantity": 55,
+      "category": 1,
       "price": 128,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/11-Shell-lougne-chair-trang-xam-xanh.png"
     },
     {
       "id": 10,
@@ -113,23 +131,26 @@
       "description": "Description for Product 10",
       "quantity": 95,
       "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-UNI-165x93x62-be-toffee_e-1.png"
     },
     {
       "id": 11,
       "name": "Product 11",
       "description": "Description for Product 11",
       "quantity": 54,
+      "category": 1,
       "price": 198,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/2-Sofa-I-Flot-xanh-la-1.png"
     },
     {
       "id": 12,
       "name": "Product 12",
       "description": "Description for Product 12",
       "quantity": 57,
+      "category": 1,
       "price": 87,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/10-Sofa-Semina.png"
     },
     {
       "id": 13,
@@ -137,71 +158,80 @@
       "description": "Description for Product 13",
       "quantity": 40,
       "price": 248,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 1,
+      "image": "./src/image/10-Sofa-Semina-xam-nhat-den.png"
     },
     {
       "id": 14,
       "name": "Product 14",
       "description": "Description for Product 14",
       "quantity": 1,
+      "category": 1,
       "price": 120,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/11-Shell-lougne-chair-trang-xam-xanh.png"
     },
     {
       "id": 15,
       "name": "Product 15",
       "description": "Description for Product 15",
       "quantity": 96,
+      "category": 1,
       "price": 130,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/11-Shell-lougne-chair-trang-xam-xanh.png"
     },
     {
       "id": 16,
       "name": "Product 16",
       "description": "Description for Product 16",
       "quantity": 83,
+      "category": 2,
       "price": 217,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 17,
       "name": "Product 17",
       "description": "Description for Product 17",
       "quantity": 82,
+      "category": 2,
       "price": 53,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 18,
       "name": "Product 18",
       "description": "Description for Product 18",
       "quantity": 87,
+      "category": 2,
       "price": 127,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 19,
       "name": "Product 19",
       "description": "Description for Product 19",
       "quantity": 8,
+      "category": 2,
       "price": 114,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 20,
       "name": "Product 20",
       "description": "Description for Product 20",
       "quantity": 12,
+      "category": 2,
       "price": 174,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 21,
       "name": "Product 21",
       "description": "Description for Product 21",
       "quantity": 58,
+      "category": 2,
       "price": 77,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 22,
@@ -209,45 +239,51 @@
       "description": "Description for Product 22",
       "quantity": 55,
       "price": 143,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 2,
+      "image": "./src/image/13.png"
     },
     {
       "id": 23,
       "name": "Product 23",
       "description": "Description for Product 23",
       "quantity": 52,
+      "category": 2,
       "price": 131,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 24,
       "name": "Product 24",
       "description": "Description for Product 24",
       "quantity": 82,
+      "category": 2,
       "price": 105,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 25,
       "name": "Product 25",
       "description": "Description for Product 25",
       "quantity": 40,
+      "category": 2,
       "price": 94,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 26,
       "name": "Product 26",
       "description": "Description for Product 26",
       "quantity": 29,
+      "category": 2,
       "price": 51,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "name": "Product 27 edit",
-      "image": "https://via.placeholder.com/100?text=Product+1",
+      "image": "./src/image/13.png",
       "description": "Description for Product 27",
       "quantity": 37,
+      "category": 2,
       "price": 144,
       "id": 27
     },
@@ -256,16 +292,18 @@
       "name": "Product 28",
       "description": "Description for Product 28",
       "quantity": 42,
+      "category": 2,
       "price": 237,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 29,
       "name": "Product 29",
       "description": "Description for Product 29",
       "quantity": 75,
+      "category": 2,
       "price": 232,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/13.png"
     },
     {
       "id": 30,
@@ -273,39 +311,44 @@
       "description": "Description for Product 30",
       "quantity": 55,
       "price": 215,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "category": 2,
+      "image": "./src/image/13.png"
     },
     {
       "id": 31,
       "name": "Product 31",
       "description": "Description for Product 31",
       "quantity": 8,
+      "category": 2,
       "price": 115,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/2-Sofa-I-Flot-xanh-la-1.png"
     },
     {
       "id": 32,
       "name": "Product 32",
       "description": "Description for Product 32",
       "quantity": 59,
+      "category": 2,
       "price": 201,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/UNI-186x93x62-ec-truffle_c.png"
     },
     {
       "id": 33,
       "name": "Product 33",
       "description": "Description for Product 33",
       "quantity": 24,
+      "category": 2,
       "price": 149,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/8-birdy-armchair-vang-nhat.png"
     },
     {
       "id": 34,
       "name": "Product 34",
       "description": "Description for Product 34",
       "quantity": 55,
+      "category": 2,
       "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/31-Shell-I-Sofa-ver2.png"
     },
     {
       "id": 35,
@@ -313,47 +356,52 @@
       "description": "Description for Product 35",
       "quantity": 65,
       "price": 122,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/7-3.png"
     },
     {
       "id": 36,
       "name": "Product 36",
       "description": "Description for Product 36",
       "quantity": 41,
+      "category": 2,
       "price": 168,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/8-2.png"
     },
     {
       "id": 37,
       "name": "Product 37",
       "description": "Description for Product 37",
       "quantity": 18,
+      "category": 2,
       "price": 75,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/46-Mand-Modul-2-2-1.png"
     },
     {
       "id": 38,
       "name": "Product 38",
       "description": "Description for Product 38",
       "quantity": 48,
+      "category": 2,
       "price": 149,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/UNI-186x93x62-ac-avocat_c.png"
     },
     {
       "id": 39,
       "name": "Product 39",
       "description": "Description for Product 39",
       "quantity": 35,
+      "category": 2,
       "price": 73,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/5-pige-4s-nau-vang.png"
     },
     {
       "id": 40,
       "name": "Product 40",
       "description": "Description for Product 40",
       "quantity": 30,
+      "category": 2,
       "price": 214,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "./src/image/10-Sofa-Semina-xam-nhat-den.png"
     }
   ],
   "cart": [],
