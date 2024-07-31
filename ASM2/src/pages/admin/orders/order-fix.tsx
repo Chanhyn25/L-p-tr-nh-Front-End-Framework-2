@@ -115,7 +115,7 @@ const OrderEditPage: React.FC = () => {
           </MenuItem>
         ))}
       </TextField>
-      <Button onClick={handleSubmit} variant="contained" color="primary">
+      <Button onClick={handleSubmit} variant="contained"  style={{ backgroundColor: "black", color: "white" , textAlign:"center"}} >
         Save Changes
       </Button>
     </div>

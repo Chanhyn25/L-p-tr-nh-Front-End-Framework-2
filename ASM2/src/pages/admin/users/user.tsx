@@ -51,9 +51,11 @@ const UserPage: React.FC = () => {
       };
 
       fetchUsers();
-    } else if (!user) {
-      nav("/login");
-    }
+    } else if
+      (!user){
+      nav("/login");}
+    
+
   }, [nav]);
 
   const handleSort = (column: keyof User) => {
@@ -135,6 +137,7 @@ const UserPage: React.FC = () => {
           component={Link}
           to="/admin/users/create"
           className="ml-4"
+          style={{ backgroundColor: "black", color: "white" , textAlign:"center"}}
         >
           Add User
         </Button>

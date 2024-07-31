@@ -115,12 +115,12 @@ const ProductPage: React.FC = () => {
       <div className="mb-4 flex justify-between items-center">
         <TextField
           label="Search"
-          variant="outlined"
+          variant="outlined"  
           fullWidth
           onChange={handleSearchChange}
           InputProps={{
             endAdornment: (
-              <InputAdornment position="end">
+              <InputAdornment  position="end">
                 {/* <SearchIcon /> */}
               </InputAdornment>
             ),
@@ -128,7 +128,7 @@ const ProductPage: React.FC = () => {
         />
         <Button
           variant="contained"
-          color="primary"
+          style={{ backgroundColor: "black", color: "white" , textAlign:"center"}}
           component={Link}
           to="/admin/products/create"
           className="ml-4"

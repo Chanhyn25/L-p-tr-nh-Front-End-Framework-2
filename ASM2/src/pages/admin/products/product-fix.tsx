@@ -101,7 +101,7 @@ const ProductEdit: React.FC = () => {
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="border rounded px-3 py-2 w-full"
+            className="border rounded px3 py-2 w-full "
             required
           />
         </div>
@@ -131,7 +131,7 @@ const ProductEdit: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-black-500 text-white px-4 py-2 rounded  hover:bg-gray-600"
         >
           Update
         </button>

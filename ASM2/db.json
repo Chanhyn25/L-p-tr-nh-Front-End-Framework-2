@@ -2,17 +2,12 @@
   "users": [
     {
       "email": "nhi@gmail.com",
-      "password": "$2a$10$qxWcN2sMLRA8FK0YDUF3dea3SzHdg2BljA8z2feaEZokMlRj0sVQK",
+      "password": "$2a$10$sSKyjiGIZ9V9J6CmKVdDTOw/47sluKFQbFTHocSGJn.TsLLs7PIFC",
       "name": "name1",
-      "role": 1,
+      "role": "1",
       "id": 2
     },
-    {
-      "email": "nhi1@gmail.com",
-      "password": "$2a$10$A.TBXsIoyffiS8Eo7sd1vuR76eV7Fp35ahl9ZWaw3sF96tJ2WVse2",
-      "id": 3,
-      "name": "name2"
-    },
+    
     {
       "email": "hanhbabe@gmail.com",
       "password": "$2a$10$AR3JfD7IKbNZXlwUzwPKE.veh4OPX.mqDAZBWlcN0s1.Bn8Wn1bn.",
@@ -26,334 +21,122 @@
     {
       "email": "myanh419@gmail.com",
       "password": "$2a$10$89XowpWltR0wCdEydGBtEOTLLNYtlsHmqq74pl0vtYuP4DML6r48e",
+    
       "id": 6
     },
     {
       "email": "myanhnguyen419@gmail.com",
       "password": "$2a$10$rFtHOy1uJnzOsCCNEQJiM.mPasTHVomvCaYFXSXc9i2p2jpkI4y5G",
+      "role": "1",
       "id": 7
+    },
+    {
+      "email": "anhntmph31703@fpt.edu.vn",
+      "password": "$2a$10$GGL/NVm69X5AmLZbC09wou5xkn0aRc0nX3Kh16tJYKGxpQO9lgouS",
+      "id": 8
+    },
+    {
+      "email": "myanh1@gmail.com",
+      "password": "$2a$10$75kGl/6k1UQ2dMdOSWmyo.CA8M.w68LA3h.K1CPeK7lkJ9wJLKb3C",
+      "id": 9
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "description": "Description for Product 1",
+      "name": "Sand Shell Single Sofa",
+      "description": "The Sand Shell Single Sofa is a sophisticated piece of furniture designed to bring both comfort and style to any living space. In summary, the Sand Shell Single Sofa is an ideal blend of style, comfort, and functionality. Its elegant design and neutral color palette make it a versatile piece that can elevate any living space while providing a cozy spot to relax.",
       "quantity": 32,
       "price": 236,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 2,
-      "name": "Product 2",
-      "description": "Description for Product 2",
+      "name": "Flot Single Sofa",
+      "description": "The Flot Single Sofa is a stylish and functional seating solution designed to enhance any living space with its modern appeal and exceptional comfort. In summary, the Flot Single Sofa combines modern design, superior comfort, and functional features to create an ideal seating solution for any living space. Its sleek aesthetic, versatile color options, and ergonomic support make it a valuable addition to both contemporary and transitional interiors.",
       "quantity": 24,
       "price": 192,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 3,
-      "name": "Product 3",
-      "description": "Description for Product 3",
+      "name": "Dark Blue Shell Single Sofa",
+      "description": "The Sand Shell Single Sofa is a sophisticated piece of furniture designed to bring both comfort and style to any living space. In summary, the Sand Shell Single Sofa is an ideal blend of style, comfort, and functionality. Its elegant design and neutral color palette make it a versatile piece that can elevate any living space while providing a cozy spot to relax.",
       "quantity": 1,
       "price": 216,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 4,
-      "name": "Product 4",
-      "description": "Description for Product 4",
+      "name": "UNI Single Sofa",
+      "description": "The Sand Shell Single Sofa is a sophisticated piece of furniture designed to bring both comfort and style to any living space. In summary, the Sand Shell Single Sofa is an ideal blend of style, comfort, and functionality. Its elegant design and neutral color palette make it a versatile piece that can elevate any living space while providing a cozy spot to relax.",
       "quantity": 74,
       "price": 105,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 5,
-      "name": "Product 5",
-      "description": "Description for Product 5",
+      "name": "UNI Single Sofa VIP",
+      "description": "The Sand Shell Single Sofa is a sophisticated piece of furniture designed to bring both comfort and style to any living space. In summary, the Sand Shell Single Sofa is an ideal blend of style, comfort, and functionality. Its elegant design and neutral color palette make it a versatile piece that can elevate any living space while providing a cozy spot to relax.",
       "quantity": 22,
       "price": 79,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCtNwYCooAafVM53ZPxYsdoMUPqrEwsc9rA&s/300/300"
     },
     {
       "id": 6,
-      "name": "Product 6",
-      "description": "Description for Product 6",
+      "name": "Flot 4S Sofa",
+      "description": "The Flot Single Sofa is a stylish and functional seating solution designed to enhance any living space with its modern appeal and exceptional comfort. In summary, the Flot Single Sofa combines modern design, superior comfort, and functional features to create an ideal seating solution for any living space. Its sleek aesthetic, versatile color options, and ergonomic support make it a valuable addition to both contemporary and transitional interiors.",
       "quantity": 29,
       "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9wgwNbSEaHzD5N28YCKx-dWg_AoY0haV16g&s/300/300"
     },
     {
       "id": 7,
-      "name": "Product 7",
-      "description": "Description for Product 7",
+      "name": "Olwyn Sofa",
+      "description": "The Olwyn Sofa is a distinguished piece of furniture designed to blend sophistication with ultimate comfort. In summary, the Olwyn Sofa combines classic elegance with modern comfort and functionality. Its refined design, luxurious upholstery, and sturdy construction make it a versatile and valuable addition to any living space, providing both aesthetic appeal and a plush seating experience.",
       "quantity": 45,
       "price": 88,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi0Ttnk6vsbmcggb1NNuDVIhlf5yGuSScudA&s/300/300"
     },
     {
       "id": 8,
-      "name": "Product 8",
-      "description": "Description for Product 8",
+      "name": "Shell I Sofa",
+      "description": "The Shell I Sofa is a stylish and functional piece of furniture that adds a touch of sophistication to any living space. In summary, the Shell I Sofa is a perfect blend of modern style, comfort, and functionality. Its sleek design, premium upholstery, and robust construction make it a valuable addition to any living space, offering both aesthetic appeal and a cozy spot to relax.",
       "quantity": 25,
       "price": 234,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuaifUX2qcc-BWynDC5m-akwFwjBKnD9rZvA&s/300/300"
     },
     {
       "id": 9,
-      "name": "Product 9",
-      "description": "Description for Product 9",
+      "name": "UNI I Sofa",
+      "description": "Uni I Sofa is a modular sofa design in the Bespoke Collection. UNI I Sofa offers flexible customization thanks to its modular structure. The chair has the ability to customize details, colors, and materials to create a unique style, aesthetic, and living space. The design is minimalist, with friendly curved details, typical of the design that Nordic pursues.",
       "quantity": 55,
       "price": 128,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 10,
-      "name": "Product 10",
-      "description": "Description for Product 10",
+      "name": "Flot I Signature Sofa",
+      "description": "Flot I Sofa in The Lover Collection is inspired by the sensuality and softness typical of femininity, creating designs with elegant, attractive curves. Flot I Sofa uses materials: Microfiber Leather, Portuguese Fabric, American Oak, 18K Gold Plated, suitable for modern, minimalist and elegant spaces.",
       "quantity": 95,
       "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 11,
-      "name": "Product 11",
-      "description": "Description for Product 11",
+      "name": "Semina Sofa I",
+      "description": "Semina Sofa is part of the Half Life collection inspired by the phrase \"A Half of your Life\", and home is a part of life. Choosing suitable furniture helps make life more fulfilling and meaningful. Semina Sofa uses materials: Microfiber Leather, Portuguese Fabric, American Oak, 18K Gold Plated, suitable for modern, minimalist and elegant spaces.",
       "quantity": 54,
       "price": 198,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "data:image/jpeg;base64,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"
     },
     {
       "id": 12,
-      "name": "Product 12",
-      "description": "Description for Product 12",
+      "name": "Semina Three Seat",
+      "description": "Semina Sofa is part of the Half Life collection inspired by the phrase \"A Half of your Life\", and home is a part of life. Choosing suitable furniture helps make life more fulfilling and meaningful. Semina Sofa uses materials: Microfiber Leather, Portuguese Fabric, American Oak, 18K Gold Plated, suitable for modern, minimalist and elegant spaces.",
       "quantity": 57,
       "price": 87,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 13,
-      "name": "Product 13",
-      "description": "Description for Product 13",
-      "quantity": 40,
-      "price": 248,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 14,
-      "name": "Product 14",
-      "description": "Description for Product 14",
-      "quantity": 1,
-      "price": 120,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 15,
-      "name": "Product 15",
-      "description": "Description for Product 15",
-      "quantity": 96,
-      "price": 130,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 16,
-      "name": "Product 16",
-      "description": "Description for Product 16",
-      "quantity": 83,
-      "price": 217,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 17,
-      "name": "Product 17",
-      "description": "Description for Product 17",
-      "quantity": 82,
-      "price": 53,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 18,
-      "name": "Product 18",
-      "description": "Description for Product 18",
-      "quantity": 87,
-      "price": 127,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 19,
-      "name": "Product 19",
-      "description": "Description for Product 19",
-      "quantity": 8,
-      "price": 114,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 20,
-      "name": "Product 20",
-      "description": "Description for Product 20",
-      "quantity": 12,
-      "price": 174,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 21,
-      "name": "Product 21",
-      "description": "Description for Product 21",
-      "quantity": 58,
-      "price": 77,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 22,
-      "name": "Product 22",
-      "description": "Description for Product 22",
-      "quantity": 55,
-      "price": 143,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 23,
-      "name": "Product 23",
-      "description": "Description for Product 23",
-      "quantity": 52,
-      "price": 131,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 24,
-      "name": "Product 24",
-      "description": "Description for Product 24",
-      "quantity": 82,
-      "price": 105,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 25,
-      "name": "Product 25",
-      "description": "Description for Product 25",
-      "quantity": 40,
-      "price": 94,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 26,
-      "name": "Product 26",
-      "description": "Description for Product 26",
-      "quantity": 29,
-      "price": 51,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "name": "Product 27 edit",
-      "image": "https://via.placeholder.com/100?text=Product+1",
-      "description": "Description for Product 27",
-      "quantity": 37,
-      "price": 144,
-      "id": 27
-    },
-    {
-      "id": 28,
-      "name": "Product 28",
-      "description": "Description for Product 28",
-      "quantity": 42,
-      "price": 237,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 29,
-      "name": "Product 29",
-      "description": "Description for Product 29",
-      "quantity": 75,
-      "price": 232,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 30,
-      "name": "Product 30",
-      "description": "Description for Product 30",
-      "quantity": 55,
-      "price": 215,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 31,
-      "name": "Product 31",
-      "description": "Description for Product 31",
-      "quantity": 8,
-      "price": 115,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 32,
-      "name": "Product 32",
-      "description": "Description for Product 32",
-      "quantity": 59,
-      "price": 201,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 33,
-      "name": "Product 33",
-      "description": "Description for Product 33",
-      "quantity": 24,
-      "price": 149,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 34,
-      "name": "Product 34",
-      "description": "Description for Product 34",
-      "quantity": 55,
-      "price": 81,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 35,
-      "name": "Product 35",
-      "description": "Description for Product 35",
-      "quantity": 65,
-      "price": 122,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 36,
-      "name": "Product 36",
-      "description": "Description for Product 36",
-      "quantity": 41,
-      "price": 168,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 37,
-      "name": "Product 37",
-      "description": "Description for Product 37",
-      "quantity": 18,
-      "price": 75,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 38,
-      "name": "Product 38",
-      "description": "Description for Product 38",
-      "quantity": 48,
-      "price": 149,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 39,
-      "name": "Product 39",
-      "description": "Description for Product 39",
-      "quantity": 35,
-      "price": 73,
-      "image": "https://via.placeholder.com/100?text=Product+1"
-    },
-    {
-      "id": 40,
-      "name": "Product 40",
-      "description": "Description for Product 40",
-      "quantity": 30,
-      "price": 214,
-      "image": "https://via.placeholder.com/100?text=Product+1"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRruJaflF92yDeCEk-okSxSxdHBZjF2_vm8cg&s"
     }
   ],
   "cart": [],
