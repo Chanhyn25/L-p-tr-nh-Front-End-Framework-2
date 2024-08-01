@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductService from "../../services/repositories/products/Product";
 import { Product } from "../../interfaces/product";
 import {
@@ -19,7 +19,7 @@ const CategoriesPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(8);
+  const [rowsPerPage] = useState(8);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -67,11 +67,12 @@ const CategoriesPage: React.FC = () => {
         Products in category {id}
       </Typography>
 
-      {/* <TextField
+      <TextField
         label="Search"
         variant="outlined"
         size="small"
         fullWidth
+        style={{ marginBottom: "20px" }}
         value={searchQuery}
         onChange={handleSearch}
         InputProps={{
@@ -84,7 +85,7 @@ const CategoriesPage: React.FC = () => {
           ),
         }}
         className="mb-4"
-      /> */}
+      />
 
       <Grid container spacing={3} >
         {loading ? (
@@ -97,9 +98,11 @@ const CategoriesPage: React.FC = () => {
             .map(product => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} >
                 <Paper elevation={3} className="p-4" sx={{ backgroundColor: 'black', padding: '16px', color: "white" }}>
-
-                  <img src={`.${product.image}`} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} />
-                  <Typography variant="h6">{product.name}</Typography>
+                  <Link to={`/productDetail/${product.id}`}>
+                    <img src={`.${product.image}`} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} />
+                  </Link>
+                  <Link to={`/productDetail/${product.id}`}>
+                    <Typography variant="h6">{product.name}</Typography></Link>
                   <Typography variant="body2" sx={{ color: "white" }}>{product.description}</Typography>
                   <Typography variant="h6" sx={{ color: "white" }}>${product.price}</Typography>
                   <Typography variant="body2" sx={{ color: "white" }}>Quantity: {product.quantity}</Typography>
@@ -131,17 +134,17 @@ const CategoriesPage: React.FC = () => {
 
       <div className="flex justify-center mt-4">
         <Button
-          variant="outlined" style={{backgroundColor:"black",color:"white"}}
+          variant="outlined" style={{ backgroundColor: "black", color: "white" }}
           onClick={() => handleChangePage(null, page - 1)}
           disabled={page === 0}
         >
           Previous
         </Button>
         <Button
-          variant="outlined" 
+          variant="outlined"
           onClick={() => handleChangePage(null, page + 1)}
           disabled={page >= Math.ceil(filteredProducts.length / rowsPerPage) - 1}
-          style={{ marginLeft: 8 , backgroundColor:"gray",color:"white", borderRadius:"none"}}
+          style={{ marginLeft: 8, backgroundColor: "gray", color: "white", borderRadius: "none" }}
         >
           Next
         </Button>

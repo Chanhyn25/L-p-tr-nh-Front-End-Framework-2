@@ -136,7 +136,7 @@ const LoginPage = ({ isLogin }: Props) => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-black-600 text-white font-bold rounded-md  hover:bg-gray-600"
+            className="w-full py-2 px-4 bg-black text-white font-bold rounded-md  hover:bg-gray-600"
           >
             {isLogin ? "Login" : "Register"}
           </button>

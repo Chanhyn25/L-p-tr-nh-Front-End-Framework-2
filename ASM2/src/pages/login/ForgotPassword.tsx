@@ -61,7 +61,7 @@ const ForgotPasswordPage: React.FC = () => {
         </div>
         <button
           onClick={handleForgotPassword}
-          className="w-full py-2 px-4 bg-black-600 text-white font-bold rounded-md  hover:bg-gray-600"
+          className="w-full py-2 px-4 bg-black text-white font-bold rounded-md  hover:bg-gray-600"
         >
           Submit
         </button>
