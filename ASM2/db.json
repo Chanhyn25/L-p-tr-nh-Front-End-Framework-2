@@ -52,7 +52,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
+      "name": "Mand I Sofa Two Seat",
       "description": "Description for Product 1",
       "quantity": 32,
       "price": 236,
@@ -62,7 +62,7 @@
     {
       "id": 2,
       "name": "Product 2",
-      "description": "Description for Product 2",
+      "description": "UNI I Sofa (CCB)",
       "quantity": 24,
       "price": 192,
       "category": 1,
@@ -70,7 +70,7 @@
     },
     {
       "id": 3,
-      "name": "Product 3",
+      "name": "UNI I Sofa (ACB)",
       "description": "Description for Product 3",
       "quantity": 1,
       "price": 216,
@@ -79,7 +79,7 @@
     },
     {
       "id": 4,
-      "name": "Product 4",
+      "name": "UNI I Sofa (DAB)",
       "description": "Description for Product 4",
       "quantity": 74,
       "price": 105,
@@ -88,7 +88,7 @@
     },
     {
       "id": 5,
-      "name": "Product 5",
+      "name": "UNI I Sofa (DCB)",
       "description": "Description for Product 5",
       "quantity": 22,
       "price": 79,
@@ -97,7 +97,7 @@
     },
     {
       "id": 6,
-      "name": "Product 6",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 6",
       "quantity": 29,
       "price": 81,
@@ -105,7 +105,7 @@
     },
     {
       "id": 7,
-      "name": "Product 7",
+      "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 7",
       "quantity": 45,
       "price": 88,
@@ -114,7 +114,7 @@
     },
     {
       "id": 8,
-      "name": "Product 8",
+      "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 8",
       "quantity": 25,
       "price": 234,
@@ -123,7 +123,7 @@
     },
     {
       "id": 9,
-      "name": "Product 9",
+      "name": "UNI I Sofa (CFA)",
       "description": "Description for Product 9",
       "quantity": 55,
       "category": 1,
@@ -132,7 +132,7 @@
     },
     {
       "id": 10,
-      "name": "Product 10",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 10",
       "quantity": 95,
       "price": 81,
@@ -141,7 +141,7 @@
     },
     {
       "id": 11,
-      "name": "Product 11",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 11",
       "quantity": 54,
       "category": 1,
@@ -150,7 +150,7 @@
     },
     {
       "id": 12,
-      "name": "Product 12",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 12",
       "quantity": 57,
       "category": 1,
@@ -159,7 +159,7 @@
     },
     {
       "id": 13,
-      "name": "Product 13",
+      "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 13",
       "quantity": 40,
       "price": 248,
@@ -168,7 +168,7 @@
     },
     {
       "id": 14,
-      "name": "Product 14",
+      "name": "UNI I Sofa (CFC)",
       "description": "Description for Product 14",
       "quantity": 1,
       "category": 1,
@@ -177,7 +177,7 @@
     },
     {
       "id": 15,
-      "name": "Product 15",
+      "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 15",
       "quantity": 96,
       "category": 1,
@@ -186,7 +186,7 @@
     },
     {
       "id": 16,
-      "name": "Product 16",
+      "name": "UNI I Sofa (CFA)",
       "description": "Description for Product 16",
       "quantity": 83,
       "category": 2,
@@ -195,70 +195,70 @@
     },
     {
       "id": 17,
-      "name": "Product 17",
+      "name": "UNI I Sofa (CFV)",
       "description": "Description for Product 17",
       "quantity": 82,
       "category": 2,
       "price": 53,
-      "image": "./src/image/13.png"
+      "image": "./src/image/2-4.png"
     },
     {
       "id": 18,
-      "name": "Product 18",
+      "name": "UNI I Sofa (CFG)",
       "description": "Description for Product 18",
       "quantity": 87,
       "category": 2,
       "price": 127,
-      "image": "./src/image/13.png"
+      "image": "./src/image/48-Manmodul-1-1-1-otto.png"
     },
     {
       "id": 19,
-      "name": "Product 19",
+      "name": "UNI I Sofa (CCF)",
       "description": "Description for Product 19",
       "quantity": 8,
       "category": 2,
       "price": 114,
-      "image": "./src/image/13.png"
+      "image": "./src/image/46-Mand-Modul-2-2-1.png"
     },
     {
       "id": 20,
-      "name": "Product 20",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 20",
       "quantity": 12,
       "category": 2,
       "price": 174,
-      "image": "./src/image/13.png"
+      "image": "./src/image/8-birdy-armchair-trang-kem.png"
     },
     {
       "id": 21,
-      "name": "Product 21",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 21",
       "quantity": 58,
       "category": 2,
       "price": 77,
-      "image": "./src/image/13.png"
+      "image": "./src/image/10-Shell-I-Sofa-xanh-la.png"
     },
     {
       "id": 22,
-      "name": "Product 22",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 22",
       "quantity": 55,
       "price": 143,
       "category": 2,
-      "image": "./src/image/13.png"
+      "image": "./src/image/48-Manmodul-1-1-1-otto.png"
     },
     {
       "id": 23,
-      "name": "Product 23",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 23",
       "quantity": 52,
       "category": 2,
       "price": 131,
-      "image": "./src/image/13.png"
+      "image": "./src/image/56-SF-6.png"
     },
     {
       "id": 24,
-      "name": "Product 24",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 24",
       "quantity": 82,
       "category": 2,
@@ -267,25 +267,25 @@
     },
     {
       "id": 25,
-      "name": "Product 25",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 25",
       "quantity": 40,
       "category": 2,
       "price": 94,
-      "image": "./src/image/13.png"
+      "image": "./src/image/2-Sofa-I-Flot-xanh-la-1.png"
     },
     {
       "id": 26,
-      "name": "Product 26",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 26",
       "quantity": 29,
       "category": 2,
       "price": 51,
-      "image": "./src/image/13.png"
+      "image": "./src/image/46-Mand-Modul-2-2-1.png"
     },
     {
-      "name": "Product 27 edit",
-      "image": "./src/image/13.png",
+      "name": "UNI I Sofa (CF)",
+      "image": "./src/image/46-Mand-Modul-2-2-1.png",
       "description": "Description for Product 27",
       "quantity": 37,
       "category": 2,
@@ -294,34 +294,34 @@
     },
     {
       "id": 28,
-      "name": "Product 28",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 28",
       "quantity": 42,
       "category": 2,
       "price": 237,
-      "image": "./src/image/13.png"
+      "image": "./src/image/48-Manmodul-1-1-1-otto.png"
     },
     {
       "id": 29,
-      "name": "Product 29",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 29",
       "quantity": 75,
       "category": 2,
       "price": 232,
-      "image": "./src/image/13.png"
+      "image": "./src/image/11-Shell-lougne-chair-trang-xam-xanh.png"
     },
     {
       "id": 30,
-      "name": "Product 30",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 30",
       "quantity": 55,
       "price": 215,
       "category": 2,
-      "image": "./src/image/13.png"
+      "image": "./src/image/10-Sofa-Semina-xam-nau.png"
     },
     {
       "id": 31,
-      "name": "Product 31",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 31",
       "quantity": 8,
       "category": 2,
@@ -330,7 +330,7 @@
     },
     {
       "id": 32,
-      "name": "Product 32",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 32",
       "quantity": 59,
       "category": 2,
@@ -339,7 +339,7 @@
     },
     {
       "id": 33,
-      "name": "Product 33",
+      "name": "UNI I Sofa (CFG)",
       "description": "Description for Product 33",
       "quantity": 24,
       "category": 2,
@@ -348,7 +348,7 @@
     },
     {
       "id": 34,
-      "name": "Product 34",
+      "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 34",
       "quantity": 55,
       "category": 2,
@@ -357,7 +357,7 @@
     },
     {
       "id": 35,
-      "name": "Product 35",
+      "name": "UNI I Sofa (CFN)",
       "description": "Description for Product 35",
       "quantity": 65,
       "price": 122,
@@ -365,7 +365,7 @@
     },
     {
       "id": 36,
-      "name": "Product 36",
+      "name": "UNI I Sofa (CFJ)",
       "description": "Description for Product 36",
       "quantity": 41,
       "category": 2,
@@ -374,7 +374,7 @@
     },
     {
       "id": 37,
-      "name": "Product 37",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 37",
       "quantity": 18,
       "category": 2,
@@ -383,7 +383,7 @@
     },
     {
       "id": 38,
-      "name": "Product 38",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 38",
       "quantity": 48,
       "category": 2,
@@ -392,7 +392,7 @@
     },
     {
       "id": 39,
-      "name": "Product 39",
+      "name": "UNI I Sofa (CF)",
       "description": "Description for Product 39",
       "quantity": 35,
       "category": 2,
@@ -401,7 +401,7 @@
     },
     {
       "id": 40,
-      "name": "Product 40",
+      "name": "UNI I Sofa (CFK)",
       "description": "Description for Product 40",
       "quantity": 30,
       "category": 2,
