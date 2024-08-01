@@ -1,3 +1,4 @@
+// src/services/repositories/orders/OrderService.ts
 import { Order } from "../../../interfaces/order";
 import { instance } from "../../api/config";
 
@@ -15,16 +16,6 @@ class OrderService {
   public static async getOrderById(id: number): Promise<Order> {
     try {
       const response = await instance.get<Order>(`/orders/${id}`);
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching order with ID ${id}`, error);
-      throw error;
-    }
-  }
-
-  public static async getOrderByUser_id(id: number): Promise<Order[]> {
-    try {
-      const response = await instance.get<Order[]>(`/orders?user_id=${id}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching order with ID ${id}`, error);

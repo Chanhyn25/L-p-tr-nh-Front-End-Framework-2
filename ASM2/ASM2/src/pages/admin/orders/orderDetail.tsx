@@ -74,7 +74,7 @@ const OrderDetailsPage: React.FC = () => {
   }, [id]);
 
   const handleBack = () => {
-    navigate(-1);
+    navigate(-1); // Navigate to the previous page
   };
 
   return (
@@ -82,12 +82,7 @@ const OrderDetailsPage: React.FC = () => {
       <Button
         onClick={handleBack}
         variant="outlined"
-        style={{
-          backgroundColor: "black",
-          color: "white",
-          textAlign: "center",
-          marginBottom: "10px",
-        }}
+        color="primary"
         className="mb-4"
       >
         Order Management
@@ -96,7 +91,7 @@ const OrderDetailsPage: React.FC = () => {
         Order Details
       </Typography>
       {order && (
-        <div className="mb-4 d-flex">
+        <div className="mb-4">
           <Typography variant="h6">Order ID: {order.id}</Typography>
           <Typography>User Name: {userName}</Typography>
           <Typography>Quantity: {order.quantity}</Typography>
