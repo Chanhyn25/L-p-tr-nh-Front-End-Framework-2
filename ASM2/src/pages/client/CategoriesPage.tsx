@@ -19,7 +19,7 @@ const CategoriesPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(8);
+  const [rowsPerPage] = useState(8);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -67,7 +67,7 @@ const CategoriesPage: React.FC = () => {
         Products in category {id}
       </Typography>
 
-      {/* <TextField
+      <TextField
         label="Search"
         variant="outlined"
         size="small"
@@ -84,7 +84,7 @@ const CategoriesPage: React.FC = () => {
           ),
         }}
         className="mb-4"
-      /> */}
+      />
 
       <Grid container spacing={3} >
         {loading ? (

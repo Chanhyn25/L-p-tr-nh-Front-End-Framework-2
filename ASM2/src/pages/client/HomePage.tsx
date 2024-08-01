@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Product } from "../../interfaces/product";
 import ProductService from "../../services/repositories/products/Product";
+import { Link } from "react-router-dom";
 
 
 const HomePage: React.FC = () => {
@@ -49,9 +50,9 @@ const HomePage: React.FC = () => {
       <div className="mt-8 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {products.map(product => (
           <div key={product.id} className="bg-black rounded-[5px] shadow p-4 product-card">
-
-            <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} className="rounded-[5px]" />
-            <h1 className="text-xl font-bold mb-2 text-center text-white">{product.name}</h1>
+            <Link to={`/productDetail/${product.id}`}>
+              <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} className="rounded-[5px]" />
+            </Link>            <h1 className="text-xl font-bold mb-2 text-center text-white">{product.name}</h1>
             <p className="mb-2 text-white">{product.description}</p>
             <p className="text-white">Price: <b>${product.price}</b></p>
             <p className="text-white">Quantity: {product.quantity}</p>
@@ -64,7 +65,7 @@ const HomePage: React.FC = () => {
                   Buy Now
                 </button>
                 <button
-                  className=" flex items-center justify-center bg-white p-1 rounded-[5px]"
+                  className=" flex items-center justify-center  p-1 rounded-[5px]"
                   onClick={() => handleAddToCart(product)}
                 >
                   <ion-icon name="cart-outline" size="small"></ion-icon>
