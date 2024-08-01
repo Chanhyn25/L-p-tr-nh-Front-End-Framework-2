@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
                   Buy Now
                 </button>
                 <button
-                  className="text-white flex items-center justify-center p-1 rounded-[5px]"
+                  className=" flex items-center justify-center bg-white p-1 rounded-[5px]"
                   onClick={() => handleAddToCart(product)}
                 >
                   <ion-icon name="cart-outline" size="small"></ion-icon>
