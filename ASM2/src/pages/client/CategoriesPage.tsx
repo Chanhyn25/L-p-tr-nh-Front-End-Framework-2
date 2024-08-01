@@ -56,7 +56,7 @@ const CategoriesPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <Typography variant="h3" component="h1" gutterBottom>
+      <Typography variant="h3"  gutterBottom>
         Products in Category {id}
       </Typography>
 
