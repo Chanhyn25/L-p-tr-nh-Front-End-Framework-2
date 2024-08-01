@@ -100,9 +100,9 @@ const CategoriesPage: React.FC = () => {
 
                   <img src={`.${product.image}`} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} />
                   <Typography variant="h6">{product.name}</Typography>
-                  <Typography variant="body2" color="textSecondary">{product.description}</Typography>
+                  <Typography variant="body2" style={{ color: "white" }}>{product.description}</Typography>
                   <Typography variant="h6" sx={{ color: "white" }}>${product.price}</Typography>
-                  <Typography variant="body2" color="textSecondary">Quantity: {product.quantity}</Typography>
+                  <Typography variant="body2" style={{ color: "white" }}>Quantity: {product.quantity}</Typography>
                   <div className="flex justify-center mt-2">
                     <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
                       <button
@@ -131,17 +131,17 @@ const CategoriesPage: React.FC = () => {
 
       <div className="flex justify-center mt-4">
         <Button
-          variant="outlined" style={{backgroundColor:"black",color:"white"}}
+          variant="outlined" style={{ backgroundColor: "black", color: "white" }}
           onClick={() => handleChangePage(null, page - 1)}
           disabled={page === 0}
         >
           Previous
         </Button>
         <Button
-          variant="outlined" 
+          variant="outlined"
           onClick={() => handleChangePage(null, page + 1)}
           disabled={page >= Math.ceil(filteredProducts.length / rowsPerPage) - 1}
-          style={{ marginLeft: 8 , backgroundColor:"gray",color:"white", borderRadius:"none"}}
+          style={{ marginLeft: 8, backgroundColor: "gray", color: "white", borderRadius: "none" }}
         >
           Next
         </Button>
