@@ -45,15 +45,15 @@ const ProductDetail: React.FC = () => {
             <p className="text-gray-700 mb-2">Category: {product.category}</p>
             <p className="text-gray-900 font-semibold">Price: ${product.price}</p>
             <div className="flex justify-center mt-2">
-                <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
+                <div className="flex justify-center items-center space-x-2 mt-2 bg-black rounded-[5px] w-40 h-10">
                     <button
-                        className="bg-white text-black px-5 py-1 rounded-[15px]"
+                        className="bg-black text-white px-5 py-1 rounded-[15px]"
                         onClick={() => handleBuyNow(product)}
                     >
                         Buy Now
                     </button>
                     <button
-                        className=" flex items-center justify-center  p-1 rounded-[5px]"
+                        className=" flex items-center justify-center bg-black text-white    p-1 rounded-[5px]"
                         onClick={() => handleAddToCart(product)}
                     >
                         <ion-icon name="cart-outline" size="small"></ion-icon>
