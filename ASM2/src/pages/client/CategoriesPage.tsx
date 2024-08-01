@@ -100,9 +100,9 @@ const CategoriesPage: React.FC = () => {
 
                   <img src={`.${product.image}`} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} />
                   <Typography variant="h6">{product.name}</Typography>
-                  <Typography variant="body2" color="textSecondary">{product.description}</Typography>
+                  <Typography variant="body2" sx={{ color: "white" }}>{product.description}</Typography>
                   <Typography variant="h6" sx={{ color: "white" }}>${product.price}</Typography>
-                  <Typography variant="body2" color="textSecondary">Quantity: {product.quantity}</Typography>
+                  <Typography variant="body2" sx={{ color: "white" }}>Quantity: {product.quantity}</Typography>
                   <div className="flex justify-center mt-2">
                     <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
                       <button
