@@ -96,7 +96,7 @@ const CategoriesPage: React.FC = () => {
                   <Typography variant="h6">{product.name}</Typography>
                   <Typography variant="body2" color="textSecondary">{product.description}</Typography>
                   <Typography variant="h6">${product.price}</Typography>
-                  <Typography variant="body2" color="textSecondary">Quantity: {product.quantity}</Typography>
+                  <Typography variant="body2" color="textSecondary">Quantity 1: {product.quantity}</Typography>
                   <div className="flex justify-between mt-2">
                     <Button variant="contained" color="primary">Buy Now</Button>
                     <Button variant="outlined" color="secondary">
