@@ -19,6 +19,7 @@ import OrderDetailsPage from "./pages/admin/orders/orderDetail";
 import OrderEditPage from "./pages/admin/orders/order-fix";
 import LogoutPage from "./pages/login/Logout";
 import ForgotPasswordPage from "./pages/login/ForgotPassword";
+import ProductDetail from "./pages/client/productDetail";
 
 const App: React.FC = () => {
   return (
@@ -27,10 +28,11 @@ const App: React.FC = () => {
         {/* Main Layout Routes */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/productDetail/:id" element={<ProductDetail />} />
+
           <Route path="/categories/:id" element={<CategoriesPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/users" element={<UsersPage />} />
-
           <Route path="/login" element={<LoginPage isLogin />} />
           <Route path="/register" element={<LoginPage />} />
           <Route path="/logout" element={<LogoutPage />} />
@@ -40,11 +42,9 @@ const App: React.FC = () => {
         {/* Admin Layout Routes */}
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<Dashboard />} />
-
           <Route path="/admin/users" element={<UserPage />} />
           <Route path="/admin/users/create" element={<UserCreatePage />} />
           <Route path="/admin/users/edit/:id" element={<UserEditPage />} />
-
           <Route path="/admin/products" element={<ProductPage />} />
           <Route path="/admin/products/create" element={<ProductCreate />} />
           <Route path="/admin/products/edit/:id" element={<ProductEdit />} />
