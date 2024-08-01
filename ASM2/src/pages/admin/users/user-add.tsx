@@ -17,7 +17,6 @@ const UserCreatePage: React.FC = () => {
 
     const user: User | null = userString ? JSON.parse(userString) : null;
     if (user?.role === 1) {
-      nav("/admin");
     } else if (!user) {
       nav("/login");
     }
@@ -113,7 +112,7 @@ const UserCreatePage: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-black-500 text-white px-4 py-2 rounded  hover:bg-gray-600"
         >
           Create
         </button>

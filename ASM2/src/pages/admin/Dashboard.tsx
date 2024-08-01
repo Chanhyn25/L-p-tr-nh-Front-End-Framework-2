@@ -19,8 +19,8 @@ const Dashboard = () => {
     }
   }, [nav]);
   return (
-    <div className="d-flex flex-column pt-3 pb-2 mb-3 border-bottom">
-      <h1 className="h2">Dashboard</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
       <div className="d-flex justify-content-between">
         <a href="/" className="link-black">
           admin
