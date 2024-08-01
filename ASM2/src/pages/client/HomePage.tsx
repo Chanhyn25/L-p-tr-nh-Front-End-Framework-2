@@ -45,17 +45,18 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
       </div>
 
-     
+      <p className=" mt-10 text-4xl "> <>New Arrivals</> </p>
       <div className="mt-8 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {products.map(product => (
-          <div key={product.id} className="bg-black rounded-[100px] shadow p-4 product-card">
-            <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} className="rounded-[90px]" />
+          <div key={product.id} className="bg-black rounded-[5px] shadow p-4 product-card">
+
+            <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} className="rounded-[5px]" />
             <h1 className="text-xl font-bold mb-2 text-center text-white">{product.name}</h1>
             <p className="mb-2 text-white">{product.description}</p>
             <p className="text-white">Price: <b>${product.price}</b></p>
             <p className="text-white">Quantity: {product.quantity}</p>
             <div className="flex justify-center mt-2">
-              <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[17px] w-40 h-10">
+              <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
                 <button
                   className="bg-white text-black px-5 py-1 rounded-[15px]"
                   onClick={() => handleBuyNow(product)}
@@ -63,7 +64,7 @@ const HomePage: React.FC = () => {
                   Buy Now
                 </button>
                 <button
-                  className="text-white flex items-center justify-center p-1"
+                  className="text-white flex items-center justify-center p-1 rounded-[5px]"
                   onClick={() => handleAddToCart(product)}
                 >
                   <ion-icon name="cart-outline" size="small"></ion-icon>

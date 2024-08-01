@@ -15,6 +15,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 
 const CategoriesPage: React.FC = () => {
+ 
   const { id } = useParams<{ id: string }>();
   const [products, setProducts] = useState<Product[]>([]);
   const [page, setPage] = useState(0);
@@ -56,8 +57,8 @@ const CategoriesPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <Typography variant="h3"  gutterBottom>
-        Products in Category {id}
+      <Typography variant="h4"  gutterBottom>
+        Products in category {id} 
       </Typography>
 
       {/* <TextField
