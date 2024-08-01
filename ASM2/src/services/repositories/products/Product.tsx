@@ -23,7 +23,15 @@ class ProductService {
       throw error;
     }
   }
-
+  public static async getProductsByCategory(id: number): Promise<Product[]> {
+    try {
+      const response = await instance.get<Product[]>(`/products?category=${id}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching user with ID ${id}`, error);
+      throw error;
+    }
+  }
   // Create a new user
   public static async createProduct(user: Product): Promise<Product> {
     try {
