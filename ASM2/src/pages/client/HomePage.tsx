@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Product } from "../../interfaces/product";
 import ProductService from "../../services/repositories/products/Product";
 
+
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -28,7 +29,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="relative h-screen w-full rounded-lg">
         <video className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" autoPlay loop muted>
           <source src="https://nordic.vn/wp-content/uploads/2023/09/31-8-2023-web.mp4" type="video/mp4" />
@@ -44,28 +45,31 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
       </div>
 
-      {/* Phần hiển thị sản phẩm */}
+      <p className=" mt-10 text-4xl "> <>New Arrivals</> </p>
       <div className="mt-8 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {products.map(product => (
-          <div key={product.id} className="bg-grey rounded-lg shadow p-4 ">
-            <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} />
-            <h2 className="text-xl font-bold mb-2 text-center ">{product.name}</h2>
-            <p className="text-gray-700 mb-2">{product.description}</p>
-            <p className="text-red-600 font-semibold">Price: ${product.price}</p>
-            <p className="text-red-900">Quantity: {product.quantity}</p>
-            <div className="flex justify-center items-center space-x-2 mt-2">
-              <button
-                className="bg-pink-300 text-white px-5 py-1 text-lg rounded"
-                onClick={() => handleBuyNow(product)}
-              >
-                Mua ngay
-              </button>
-              <button
-                className="text-pink-500 flex items-center justify-center p-1"
-                onClick={() => handleAddToCart(product)}
-              >
-                <ion-icon name="cart-outline" size="small"></ion-icon>
-              </button>
+          <div key={product.id} className="bg-black rounded-[5px] shadow p-4 product-card">
+
+            <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover', marginBottom: 16 }} className="rounded-[5px]" />
+            <h1 className="text-xl font-bold mb-2 text-center text-white">{product.name}</h1>
+            <p className="mb-2 text-white">{product.description}</p>
+            <p className="text-white">Price: <b>${product.price}</b></p>
+            <p className="text-white">Quantity: {product.quantity}</p>
+            <div className="flex justify-center mt-2">
+              <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
+                <button
+                  className="bg-white text-black px-5 py-1 rounded-[15px]"
+                  onClick={() => handleBuyNow(product)}
+                >
+                  Buy Now
+                </button>
+                <button
+                  className="text-white flex items-center justify-center p-1 rounded-[5px]"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  <ion-icon name="cart-outline" size="small"></ion-icon>
+                </button>
+              </div>
             </div>
           </div>
         ))}
