@@ -109,6 +109,7 @@ const OrderManagementPage: React.FC = () => {
                       variant="contained"
                       color="primary"
                       component={Link}
+                      style={{ backgroundColor: "black", color: "white" , textAlign:"center"}}
                       to={`/admin/orders/details/${order.id}`}
                     >
                       Details
@@ -118,7 +119,8 @@ const OrderManagementPage: React.FC = () => {
                       color="secondary"
                       component={Link}
                       to={`/admin/orders/edit/${order.id}`}
-                      className="ml-4" // Added margin-left for spacing
+                      className="ml-4" 
+                      style={{ backgroundColor: "gray", color: "white" , textAlign:"center"}}
                     >
                       Edit
                     </Button>

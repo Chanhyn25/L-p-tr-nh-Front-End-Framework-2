@@ -35,7 +35,6 @@ const LoginPage = ({ isLogin }: Props) => {
     console.log(data);
     try {
       if (isLogin) {
-        // Logic login
         const res = await instance.post(`/login`, data);
         if (res) {
           localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -47,7 +46,6 @@ const LoginPage = ({ isLogin }: Props) => {
           }
         }
       } else {
-        // Logic register
         console.log(data);
         await instance.post(`/register`, {
           email: data.email,
@@ -57,16 +55,16 @@ const LoginPage = ({ isLogin }: Props) => {
       }
     } catch (error) {
       console.error("An error occurred:", error);
-      // Optional: Handle errors (e.g., show a notification)
+
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 rounded">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-2xl font-bold mb-6 text-center">
-            {isLogin ? "Login" : "Register"}
+            {isLogin ? "LOGIN" : "REGISTER"}
           </h1>
           <div className="mb-4">
             <label
@@ -78,11 +76,8 @@ const LoginPage = ({ isLogin }: Props) => {
             <input
               type="email"
               id="email"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-                errors.email
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-indigo-500"
-              }`}
+              className={`mt-1 block w-full px-3 py-2 border rounded-md 
+                }`}
               {...register("email", { required: "Email is required" })}
             />
             {errors.email && (
@@ -102,11 +97,9 @@ const LoginPage = ({ isLogin }: Props) => {
             <input
               type="password"
               id="password"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-                errors.password
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-indigo-500"
-              }`}
+              className={`mt-1 block w-full px-3 py-2 border rounded-md 
+                 
+                }`}
               {...register("password", { required: "Password is required" })}
             />
             {errors.password && (
@@ -127,11 +120,8 @@ const LoginPage = ({ isLogin }: Props) => {
               <input
                 type="password"
                 id="confirmPass"
-                className={`mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1 ${
-                  errors.confirmPass
-                    ? "border-red-500 focus:ring-red-500"
-                    : "border-gray-300 focus:ring-indigo-500"
-                }`}
+                className={`mt-1 block w-full px-3 py-2 border rounded-md 
+                  }`}
                 {...register("confirmPass", {
                   required: "Confirm Password is required",
                 })}
@@ -146,7 +136,7 @@ const LoginPage = ({ isLogin }: Props) => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-indigo-600 text-white font-bold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full py-2 px-4 bg-black-600 text-white font-bold rounded-md  hover:bg-gray-600"
           >
             {isLogin ? "Login" : "Register"}
           </button>
@@ -157,7 +147,7 @@ const LoginPage = ({ isLogin }: Props) => {
           </span>
           <a
             href={isLogin ? "/register" : "/login"}
-            className="ml-1 text-indigo-600 hover:text-indigo-700 font-bold"
+            className="ml-1 text-gray-900 hover:text-gray-500 font-bold"
           >
             {isLogin ? "Register" : "Login"}
           </a>
@@ -165,7 +155,7 @@ const LoginPage = ({ isLogin }: Props) => {
             <div className="mt-2">
               <a
                 href="/forgot-password"
-                className="text-indigo-600 hover:text-indigo-700 font-bold"
+                className=" text-gray-900 hover:text-gray-500 font-bold"
               >
                 Forgot Password?
               </a>

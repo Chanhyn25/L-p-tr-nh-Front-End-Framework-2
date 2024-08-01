@@ -68,7 +68,7 @@ const UserEditPage: React.FC = () => {
   }
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
+    <div className="p-4">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Edit User</h1>
       {error && (
         <div className="mb-4 p-4 bg-red-100 text-red-800 rounded">{error}</div>
@@ -109,7 +109,7 @@ const UserEditPage: React.FC = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded px-3 py-2 w-full "
           />
         </div>
         <div>
@@ -120,7 +120,7 @@ const UserEditPage: React.FC = () => {
             type="password"
             value={confirmPass}
             onChange={(e) => setConfirmPass(e.target.value)}
-            className="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded px-3 py-2 w-full "
           />
         </div>
         <div>
@@ -130,7 +130,7 @@ const UserEditPage: React.FC = () => {
           <select
             value={role}
             onChange={(e) => setRole(e.target.value)}
-            className="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border rounded px-3 py-2 w-full "
             required
           >
             <option value="0">User</option>
@@ -139,7 +139,7 @@ const UserEditPage: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-black-500 text-white px-4 py-2 rounded hover:bg-gray-600 "
         >
           Update
         </button>
