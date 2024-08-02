@@ -123,7 +123,7 @@ const OrderDetailsPage: React.FC = () => {
                   <TableCell>
                     {product?.image ? (
                       <img
-                        src={`.${product.image}`}
+                        src={`${product.image}`}
                         alt={product.name}
                         style={{ width: 150, height: 150, objectFit: "cover" }}
                       />

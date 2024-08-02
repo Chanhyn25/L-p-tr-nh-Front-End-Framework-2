@@ -7,6 +7,7 @@ import { Product } from "../../../interfaces/product";
 import { User } from "../../../interfaces/user";
 import { useNavigate } from "react-router-dom";
 import { productSchema } from "../../../utils/valtidation";
+import axios from "axios";
 
 
 const ProductCreate: React.FC = () => {
@@ -36,7 +37,15 @@ const ProductCreate: React.FC = () => {
     try {
       const formData = new FormData();
       if (imageFile) {
-        formData.append("image", imageFile);
+        const formData1 = new FormData();
+        formData1.append("file", imageFile);
+        formData1.append("upload_preset", "asm-react");
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/dhi3ud9d0/image/upload",
+          formData1,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+        formData.append("image", response.data.secure_url);
       }
       formData.append("name", data.name);
       formData.append("description", data.description || '');

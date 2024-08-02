@@ -114,7 +114,7 @@ const CategoriesPage: React.FC = () => {
                 >
                   <Link to={`/productDetail/${product.id}`}>
                     <img
-                      src={`.${product.image}`}
+                      src={`${product.image}`}
                       alt={product.name}
                       style={{
                         width: "100%",

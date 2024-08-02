@@ -1,17 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import UserService from "../../../services/repositories/users/UserService";
 import { User } from "../../../interfaces/user";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // Define Zod schema for validation
 const userSchema = z.object({
   email: z.string().email("Invalid email address"),
   name: z.string().min(1, "Name is required"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits long"),
+  address: z.string().min(1, "Address is required"),
   password: z.string().min(6, "Password must be at least 6 characters long"),
   confirmPass: z.string().min(6, "Confirm Password must be at least 6 characters long"),
+  avatar: z.string().url("Avatar must be a valid URL").optional(),
   role: z.enum(["0", "1"], "Role is required"),
 }).refine((data) => data.password === data.confirmPass, {
   message: "Passwords must match",
@@ -23,11 +27,13 @@ const UserCreatePage: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<User>({
     resolver: zodResolver(userSchema),
   });
 
   const nav = useNavigate();
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
 
   useEffect(() => {
     const userString = localStorage.getItem("user");
@@ -37,8 +43,29 @@ const UserCreatePage: React.FC = () => {
     }
   }, [nav]);
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAvatarPreview(reader.result as string);
+        setValue("avatar", reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const onSubmit = async (data: User) => {
     try {
+      const formData1 = new FormData();
+      formData1.append("file", data.avatar);
+      formData1.append("upload_preset", "asm-react");
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dhi3ud9d0/image/upload",
+        formData1,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      data.avatar = response.data.secure_url
       await UserService.createUser(data);
       nav("/admin/users");
     } catch (error) {
@@ -50,6 +77,19 @@ const UserCreatePage: React.FC = () => {
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Create User</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <div className="flex items-center mb-4">
+          <img
+            src={avatarPreview || "default-avatar.png"}
+            alt="Avatar"
+            className="w-24 h-24 rounded-full border border-gray-300"
+          />
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="ml-4"
+            accept="image/*"
+          />
+        </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Email:</label>
           <input
@@ -67,6 +107,24 @@ const UserCreatePage: React.FC = () => {
             className="border rounded px-3 py-2 w-full"
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Phone:</label>
+          <input
+            type="text"
+            {...register("phone")}
+            className="border rounded px-3 py-2 w-full"
+          />
+          {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Address:</label>
+          <input
+            type="text"
+            {...register("address")}
+            className="border rounded px-3 py-2 w-full"
+          />
+          {errors.address && <p className="text-red-500 text-sm">{errors.address.message}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Password:</label>

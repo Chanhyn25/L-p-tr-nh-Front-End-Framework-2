@@ -31,7 +31,6 @@ const UserPage: React.FC = () => {
 
   useEffect(() => {
     const userString = localStorage.getItem("user");
-
     const user: User | null = userString ? JSON.parse(userString) : null;
     if (user?.role === 1) {
       const fetchUsers = async () => {
@@ -51,11 +50,9 @@ const UserPage: React.FC = () => {
       };
 
       fetchUsers();
-    } else if
-      (!user){
-      nav("/login");}
-    
-
+    } else if (!user) {
+      nav("/login");
+    }
   }, [nav]);
 
   const handleSort = (column: keyof User) => {
@@ -81,11 +78,13 @@ const UserPage: React.FC = () => {
     const lowercasedSearch = search.toLowerCase();
     return (
       (user.email ?? "").toLowerCase().includes(lowercasedSearch) ||
-      (user.name ?? "").toLowerCase().includes(lowercasedSearch)
+      (user.name ?? "").toLowerCase().includes(lowercasedSearch) ||
+      (user.phone ?? "").toLowerCase().includes(lowercasedSearch) ||
+      (user.address ?? "").toLowerCase().includes(lowercasedSearch)
     );
   });
 
-  const sortedUser = filteredUsers.sort((a, b) => {
+  const sortedUsers = filteredUsers.sort((a, b) => {
     const aValue = a[sortColumn];
     const bValue = b[sortColumn];
 
@@ -107,9 +106,7 @@ const UserPage: React.FC = () => {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -137,7 +134,7 @@ const UserPage: React.FC = () => {
           component={Link}
           to="/admin/users/create"
           className="ml-4"
-          style={{ backgroundColor: "black", color: "white" , textAlign:"center"}}
+          style={{ backgroundColor: "black", color: "white", textAlign: "center" }}
         >
           Add User
         </Button>
@@ -162,6 +159,15 @@ const UserPage: React.FC = () => {
                 </TableCell>
                 <TableCell>
                   <TableSortLabel
+                    active={sortColumn === "avatar"}
+                    direction={sortColumn === "avatar" ? sortDirection : "asc"}
+                    onClick={() => handleSort("avatar")}
+                  >
+                    Avatar
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
                     active={sortColumn === "email"}
                     direction={sortColumn === "email" ? sortDirection : "asc"}
                     onClick={() => handleSort("email")}
@@ -178,24 +184,59 @@ const UserPage: React.FC = () => {
                     Name
                   </TableSortLabel>
                 </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "phone"}
+                    direction={sortColumn === "phone" ? sortDirection : "asc"}
+                    onClick={() => handleSort("phone")}
+                  >
+                    Phone
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "address"}
+                    direction={sortColumn === "address" ? sortDirection : "asc"}
+                    onClick={() => handleSort("address")}
+                  >
+                    Address
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortColumn === "role"}
+                    direction={sortColumn === "role" ? sortDirection : "asc"}
+                    onClick={() => handleSort("role")}
+                  >
+                    Role
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {sortedUser
+              {sortedUsers
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((user) => (
                   <TableRow key={user.id}>
                     <TableCell>{user.id}</TableCell>
+                    <TableCell>
+                      <img src={user.avatar} alt="avatar" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                    </TableCell>
                     <TableCell>{user.email}</TableCell>
                     <TableCell>{user.name}</TableCell>
+                    <TableCell>{user.phone}</TableCell>
+                    <TableCell>{user.address}</TableCell>
+                    <TableCell>{user.role === "1" ? "Admin" : "User"}</TableCell>
                     <TableCell>
-                    <Link to={`/admin/users/edit/${user.id}`}>
-                      <button className="text-black bg-white mr-2" >
-                    <ion-icon name="create-outline"  style={{ fontSize: '24px' }}></ion-icon></button>
-                    </Link>
-                      <button className="text-black bg-white"  onClick={() => handleDelete(user.id)}>
-                    <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon></button>
+                      <Link to={`/admin/users/edit/${user.id}`}>
+                        <IconButton>
+                          <EditIcon />
+                        </IconButton>
+                      </Link>
+                      <IconButton onClick={() => handleDelete(user.id)}>
+                        <DeleteIcon />
+                      </IconButton>
                     </TableCell>
                   </TableRow>
                 ))}

@@ -27,11 +27,11 @@ const ProductDetail: React.FC = () => {
   const [similarProducts, setSimilarProducts] = useState<SimilarProduct[]>([]);
   const [quantity, setQuantity] = useState(1);
   const nav = useNavigate();
+  const userString = localStorage.getItem("user");
 
+  const user: User | null = userString ? JSON.parse(userString) : null;
   useEffect(() => {
-    const userString = localStorage.getItem("user");
 
-    const user: User | null = userString ? JSON.parse(userString) : null;
     if (user?.role === 1) {
       nav("/admin");
     }
@@ -55,45 +55,52 @@ const ProductDetail: React.FC = () => {
   }
 
   const handleAddToCart = async (product: ProductDetail) => {
-    const userString = localStorage.getItem("user");
-    const user: User | null = userString ? JSON.parse(userString) : null;
+    if (user?.role === 1) {
+      nav("/admin");
+    } else if (!user) {
+      nav("/login");
+    } else {
+      const userString = localStorage.getItem("user");
+      const user: User | null = userString ? JSON.parse(userString) : null;
 
-    if (!user) {
-      console.error("User not found. Please log in.");
-      return;
-    }
-
-    try {
-      const cartItems: Cart[] = await CartService.getCartItemsByUserId(user.id);
-
-      const existingCartItem = cartItems.find(
-        (item) => item.product_id === product.id
-      );
-
-      if (existingCartItem) {
-        const updatedCartItem = {
-          ...existingCartItem,
-          quantity: existingCartItem.quantity + quantity,
-          total: (existingCartItem.quantity + quantity) * product.price,
-        };
-
-        await CartService.updateCartItem(updatedCartItem.id, updatedCartItem);
-      } else {
-        const newCartItem: Cart = {
-          id: Date.now(),
-          user_id: user.id,
-          product_id: product.id,
-          quantity: quantity,
-          total: quantity * product.price,
-        };
-
-        await CartService.createCartItem(newCartItem);
+      if (!user) {
+        console.error("User not found. Please log in.");
+        return;
       }
 
-      alert("Add to cart successfully");
-    } catch (error) {
-      console.error("Error updating cart:", error);
+      try {
+        const cartItems: Cart[] = await CartService.getCartItemsByUserId(user.id);
+
+        const existingCartItem = cartItems.find(
+          (item) => item.product_id === product.id
+        );
+
+        if (existingCartItem) {
+          const updatedCartItem = {
+            ...existingCartItem,
+            quantity: existingCartItem.quantity + quantity,
+            total: (existingCartItem.quantity + quantity) * product.price,
+          };
+
+          await CartService.updateCartItem(updatedCartItem.id, updatedCartItem);
+        } else {
+          const newCartItem: Cart = {
+            id: Date.now(),
+            user_id: user.id,
+            product_id: product.id,
+            quantity: quantity,
+            total: quantity * product.price,
+          };
+
+          await CartService.createCartItem(newCartItem);
+        }
+
+        alert("Add to cart successfully");
+      } catch (error) {
+        console.error("Error updating cart:", error);
+      }
     }
+
   };
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,7 +115,7 @@ const ProductDetail: React.FC = () => {
     <div>
       <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
         <img
-          src={`../${product.image}`}
+          src={`${product.image}`}
           alt={product.name}
           className="w-full h-64 object-cover mb-4 rounded"
         />
@@ -193,7 +200,7 @@ const ProductDetail: React.FC = () => {
             >
               <Link to={`/productDetail/${similarProduct.id}`}>
                 <img
-                  src={`../${similarProduct.image}`}
+                  src={`${similarProduct.image}`}
                   alt={similarProduct.name}
                   className="w-full h-40 object-cover mb-2 rounded"
                 />
