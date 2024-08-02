@@ -6,5 +6,6 @@ export interface User {
   address: string;
   password: string;
   confirmPass: string;
+  avatar: string;
   role: string | number;
 }

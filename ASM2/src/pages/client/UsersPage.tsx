@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { User } from "../../interfaces/user";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CartService from "../../services/repositories/cart/cart";
 import UserService from "../../services/repositories/users/UserService";
 import OrderService from "../../services/repositories/order/order";
+import axios from "axios";
 
 const UsersPage: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -19,7 +20,7 @@ const UsersPage: React.FC = () => {
     password: "",
     confirmPass: "",
     role: 0,
-    avatar: "", // Add avatar field
+    avatar: "",
   });
   const [orders, setOrders] = useState<any[]>([]); // Replace with appropriate type
 
@@ -82,6 +83,15 @@ const UsersPage: React.FC = () => {
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      const formData1 = new FormData();
+      formData1.append("file", formData.avatar);
+      formData1.append("upload_preset", "asm-react");
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dhi3ud9d0/image/upload",
+        formData1,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      formData.avatar = response.data.secure_url;
       await UserService.updateUser(formData.id, formData);
       setUser(formData);
       localStorage.setItem("user", JSON.stringify(formData));
@@ -213,12 +223,18 @@ const UsersPage: React.FC = () => {
                 >
                   Edit
                 </button>
-                <button
-                  
-                  className="inline-flex items-center ml-2 px-5 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
+                <Link
+                  to="/logout"
+
                 >
-                  Log Out
-                </button>
+                  <button
+
+                    className="inline-flex items-center ml-2 px-5 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
+                  >
+                    Log Out
+                  </button>
+                </Link>
+
               </div>
             )}
           </>

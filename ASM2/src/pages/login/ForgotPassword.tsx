@@ -2,7 +2,25 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { instance } from "../../services/api/config";
+function getRandomNumber(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+function getRandomCharacter(): string {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const randomIndex = Math.floor(Math.random() * characters.length);
+  return characters[randomIndex];
+}
+
+function generateRandomString(): string {
+  const numbers = Array.from({ length: 8 }, () => getRandomNumber(1, 9)).join(
+    ""
+  );
+  const randomCharacter = getRandomCharacter();
+  return numbers + randomCharacter;
+}
 const ForgotPasswordPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -20,15 +38,23 @@ const ForgotPasswordPage: React.FC = () => {
         `http://localhost:3000/users?email=${email}`
       );
       if (response.data.length > 0) {
+        await instance.delete(`/users/${response.data[0].id}`);
+        const newPassword = generateRandomString();
+
+        await instance.post(`/register`, {
+          email: email,
+          password: newPassword,
+        });
         const templateParams = {
           email_to: email,
-          message: response.data[0].password,
+          message: newPassword,
         };
+
         await emailjs.send(
-          "service_19jna74",
-          "template_6wiy7qg",
+          "service_w7kc54i",
+          "template_3xw8nyd",
           templateParams,
-          "m7G4lnXjNVoBSbqHu"
+          "blSZvD27qO8ZMFWyY"
         );
         setMessage("Password reset email sent!");
       } else {

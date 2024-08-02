@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductService from "../../../services/repositories/products/Product";
 import { User } from "../../../interfaces/user";
+import axios from "axios";
 
 const ProductEdit: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -28,7 +29,7 @@ const ProductEdit: React.FC = () => {
           try {
             const product = await ProductService.getProductById(Number(id));
             setName(product.name);
-            setImagePreview(product.image); 
+            setImagePreview(product.image);
             setDescription(product.description);
             setQuantity(product.quantity);
             setPrice(product.price);
@@ -51,7 +52,7 @@ const ProductEdit: React.FC = () => {
     const file = e.target.files?.[0] || null;
     if (file) {
       setImage(file);
-      setImagePreview(URL.createObjectURL(file)); 
+      setImagePreview(URL.createObjectURL(file));
     }
   };
 
@@ -65,7 +66,15 @@ const ProductEdit: React.FC = () => {
       formData.append("price", price.toString());
 
       if (image) {
-        formData.append("image", image);
+        const formData1 = new FormData();
+        formData1.append("file", image);
+        formData1.append("upload_preset", "asm-react");
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/dhi3ud9d0/image/upload",
+          formData1,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+        formData.append("image", response.data.secure_url);
       }
 
       await ProductService.updateProduct(Number(id), formData);
@@ -110,7 +119,7 @@ const ProductEdit: React.FC = () => {
               src={imagePreview}
               alt="Image Preview"
               className="mt-2 border rounded max-w-full h-auto"
-              style={{ maxWidth: '200px', maxHeight: '200px' }} 
+              style={{ maxWidth: '200px', maxHeight: '200px' }}
             />
           )}
         </div>

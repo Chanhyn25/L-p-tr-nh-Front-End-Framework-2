@@ -107,14 +107,14 @@ const CategoriesPage: React.FC = () => {
                   elevation={3}
                   className="p-4 product-card"
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "gray",
                     padding: "16px",
                     color: "white",
                   }}
                 >
                   <Link to={`/productDetail/${product.id}`}>
                     <img
-                      src={`.${product.image}`}
+                      src={`${product.image}`}
                       alt={product.name}
                       style={{
                         width: "100%",
@@ -125,9 +125,6 @@ const CategoriesPage: React.FC = () => {
                     /></Link>
                   <Link to={`/productDetail/${product.id}`}>
                     <Typography variant="h6">{product.name}</Typography></Link>
-                  <Typography variant="body2" style={{ color: "white" }}>
-                    {product.description}
-                  </Typography>
                   <Typography variant="h6" sx={{ color: "white" }}>
                     ${product.price}
                   </Typography>
@@ -158,8 +155,8 @@ const CategoriesPage: React.FC = () => {
 
       <div className="flex justify-center mt-4">
         <Button
-          
-          style={{  color: "black" }}
+
+          style={{ color: "black" }}
           onClick={() => handleChangePage(null, page - 1)}
           disabled={page === 0}
           startIcon={<ArrowBackIosIcon />}
@@ -167,7 +164,7 @@ const CategoriesPage: React.FC = () => {
           Previous
         </Button>
         <Button
-        
+
           onClick={() => handleChangePage(null, page + 1)}
           disabled={
             page >= Math.ceil(filteredProducts.length / rowsPerPage) - 1
