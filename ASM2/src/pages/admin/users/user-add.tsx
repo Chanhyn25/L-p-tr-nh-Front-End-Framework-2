@@ -1,118 +1,105 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import UserService from "../../../services/repositories/users/UserService";
 import { User } from "../../../interfaces/user";
 import { useNavigate } from "react-router-dom";
 
+// Define Zod schema for validation
+const userSchema = z.object({
+  email: z.string().email("Invalid email address"),
+  name: z.string().min(1, "Name is required"),
+  password: z.string().min(6, "Password must be at least 6 characters long"),
+  confirmPass: z.string().min(6, "Confirm Password must be at least 6 characters long"),
+  role: z.enum(["0", "1"], "Role is required"),
+}).refine((data) => data.password === data.confirmPass, {
+  message: "Passwords must match",
+  path: ["confirmPass"],
+});
+
 const UserCreatePage: React.FC = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
-  const [role, setRole] = useState("0");
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    resolver: zodResolver(userSchema),
+  });
+
   const nav = useNavigate();
+
   useEffect(() => {
     const userString = localStorage.getItem("user");
-
     const user: User | null = userString ? JSON.parse(userString) : null;
-    if (user?.role === 1) {
-    } else if (!user) {
+    if (!user || user.role !== 1) {
       nav("/login");
     }
   }, [nav]);
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    try {
-      const newUser: User = {
-        id: Number(Date.now()),
-        email,
-        name,
-        password,
-        confirmPass,
-        role,
-      };
 
-      await UserService.createUser(newUser);
-      setSuccess("User created successfully");
-      setPassword("");
-      setEmail("");
+  const onSubmit = async (data: User) => {
+    try {
+      await UserService.createUser(data);
+      nav("/admin/users");
     } catch (error) {
-      setError("Failed to create user");
+      console.error("Failed to create user:", error);
     }
   };
 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Create User</h1>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
-      {success && <p className="text-green-500 mb-4">{success}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Email:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Email:</label>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Name:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Name:</label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            {...register("name")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Password:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Password:</label>
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            {...register("password")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Confirm Password:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Confirm Password:</label>
           <input
             type="password"
-            value={confirmPass}
-            onChange={(e) => setConfirmPass(e.target.value)}
+            {...register("confirmPass")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.confirmPass && <p className="text-red-500 text-sm">{errors.confirmPass.message}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Role:
-          </label>
+          <label className="block text-sm font-medium text-gray-700">Role:</label>
           <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
+            {...register("role")}
             className="border rounded px-3 py-2 w-full"
-            required
           >
             <option value="0">User</option>
             <option value="1">Admin</option>
           </select>
+          {errors.role && <p className="text-red-500 text-sm">{errors.role.message}</p>}
         </div>
         <button
           type="submit"
-          className="bg-black-500 text-white px-4 py-2 rounded  hover:bg-gray-600"
+          className="bg-black text-white px-4 py-2 rounded hover:bg-gray-600"
         >
           Create
         </button>

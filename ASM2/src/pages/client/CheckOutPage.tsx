@@ -4,10 +4,9 @@ import { User } from "../../interfaces/user";
 import CartService from "../../services/repositories/cart/cart";
 import ProductService from "../../services/repositories/products/Product";
 import UserService from "../../services/repositories/users/UserService";
+import { Cart, Product } from "../../interfaces"; // Import các kiểu dữ liệu nếu có
 import OrderService from "../../services/repositories/order/order";
 import OrderDetailService from "../../services/repositories/order/orderDetail";
-import { Cart } from "../../interfaces/cart";
-import { Product } from "../../interfaces/product";
 
 const CheckoutPage: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -169,7 +168,7 @@ const CheckoutPage: React.FC = () => {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {item.quantity_cart}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm  text-gray-500">
                         ${item.price}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -212,7 +211,7 @@ const CheckoutPage: React.FC = () => {
       </div>
       <div className="text-right mt-4">
         <button
-          className="px-6 py-3 bg-green-500 text-white font-semibold rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="px-6 py-3 bg-black text-white font-semibold rounded hover:bg-gray-600 "
           onClick={handleConfirmOrder}
         >
           Confirm Order

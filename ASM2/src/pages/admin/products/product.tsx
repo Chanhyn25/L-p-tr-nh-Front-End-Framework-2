@@ -208,16 +208,12 @@ const ProductPage: React.FC = () => {
                   <TableCell>{product.price}</TableCell>
                   <TableCell>
                     <Link to={`/admin/products/edit/${product.id}`}>
-                      <IconButton color="primary">
-                        <EditIcon />
-                      </IconButton>
+                      <button className="text-black bg-white mr-2" >
+                    <ion-icon name="create-outline"  style={{ fontSize: '24px' }}></ion-icon></button>
                     </Link>
-                    <IconButton
-                      color="secondary"
-                      onClick={() => handleDelete(product.id)}
-                    >
-                      <DeleteIcon />
-                    </IconButton>
+                    <button className="text-black bg-white"  onClick={() => handleDelete(product.id)}>
+                    <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon></button>
+                   
                   </TableCell>
                 </TableRow>
               ))}

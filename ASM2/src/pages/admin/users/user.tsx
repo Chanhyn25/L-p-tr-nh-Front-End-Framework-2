@@ -190,19 +190,12 @@ const UserPage: React.FC = () => {
                     <TableCell>{user.email}</TableCell>
                     <TableCell>{user.name}</TableCell>
                     <TableCell>
-                      <IconButton
-                        component={Link}
-                        to={`/admin/users/edit/${user.id}`}
-                        color="primary"
-                      >
-                        <EditIcon />
-                      </IconButton>
-                      <IconButton
-                        color="secondary"
-                        onClick={() => handleDelete(user.id)}
-                      >
-                        <DeleteIcon />
-                      </IconButton>
+                    <Link to={`/admin/users/edit/${user.id}`}>
+                      <button className="text-black bg-white mr-2" >
+                    <ion-icon name="create-outline"  style={{ fontSize: '24px' }}></ion-icon></button>
+                    </Link>
+                      <button className="text-black bg-white"  onClick={() => handleDelete(user.id)}>
+                    <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon></button>
                     </TableCell>
                   </TableRow>
                 ))}
