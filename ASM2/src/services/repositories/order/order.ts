@@ -22,6 +22,16 @@ class OrderService {
     }
   }
 
+  public static async getOrderByUser_id(id: number): Promise<Order[]> {
+    try {
+      const response = await instance.get<Order[]>(`/orders?user_id=${id}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching order with ID ${id}`, error);
+      throw error;
+    }
+  }
+
   public static async createOrder(order: Order): Promise<Order> {
     try {
       const response = await instance.post<Order>("/orders", order);

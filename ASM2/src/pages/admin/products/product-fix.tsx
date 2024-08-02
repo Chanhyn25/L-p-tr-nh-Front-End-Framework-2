@@ -1,13 +1,14 @@
 // src/pages/ProductEdit.tsx
-import React, { useState, useEffect } from "react";
 
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductService from "../../../services/repositories/products/Product";
 import { User } from "../../../interfaces/user";
 
 const ProductEdit: React.FC = () => {
   const [name, setName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [description, setDescription] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
@@ -27,7 +28,7 @@ const ProductEdit: React.FC = () => {
           try {
             const product = await ProductService.getProductById(Number(id));
             setName(product.name);
-            setImage(product.image);
+            setImagePreview(product.image); 
             setDescription(product.description);
             setQuantity(product.quantity);
             setPrice(product.price);
@@ -44,18 +45,30 @@ const ProductEdit: React.FC = () => {
     } else {
       nav("/");
     }
-  }, [id]);
+  }, [id, nav]);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    if (file) {
+      setImage(file);
+      setImagePreview(URL.createObjectURL(file)); 
+    }
+  };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      await ProductService.updateProduct(Number(id), {
-        name,
-        image,
-        description,
-        quantity,
-        price,
-      });
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("quantity", quantity.toString());
+      formData.append("price", price.toString());
+
+      if (image) {
+        formData.append("image", image);
+      }
+
+      await ProductService.updateProduct(Number(id), formData);
       setSuccess("Product updated successfully");
       nav("/admin/products");
     } catch (error) {
@@ -69,7 +82,7 @@ const ProductEdit: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       {success && <p className="text-green-500 mb-4">{success}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Name:
@@ -84,15 +97,22 @@ const ProductEdit: React.FC = () => {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Image URL:
+            Image:
           </label>
           <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {imagePreview && (
+            <img
+              src={imagePreview}
+              alt="Image Preview"
+              className="mt-2 border rounded max-w-full h-auto"
+              style={{ maxWidth: '200px', maxHeight: '200px' }} 
+            />
+          )}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
@@ -101,7 +121,7 @@ const ProductEdit: React.FC = () => {
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="border rounded px3 py-2 w-full "
+            className="border rounded px-3 py-2 w-full"
             required
           />
         </div>
@@ -131,7 +151,7 @@ const ProductEdit: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="bg-black-500 text-white px-4 py-2 rounded  hover:bg-gray-600"
+          className="bg-black-500 text-white px-4 py-2 rounded hover:bg-gray-600"
         >
           Update
         </button>

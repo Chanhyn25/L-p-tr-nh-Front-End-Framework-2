@@ -66,6 +66,30 @@ const LoginPage = ({ isLogin }: Props) => {
           <h1 className="text-2xl font-bold mb-6 text-center">
             {isLogin ? "LOGIN" : "REGISTER"}
           </h1>
+          {!isLogin && (
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className={`mt-1 block w-full px-3 py-2 border rounded-md 
+                  }`}
+                {...register("name", {
+                  required: "Username is required",
+                })}
+              />
+              {errors.name && (
+                <span className="text-red-500 text-sm">
+                  {errors.name.message}
+                </span>
+              )}
+            </div>
+          )}
           <div className="mb-4">
             <label
               htmlFor="email"

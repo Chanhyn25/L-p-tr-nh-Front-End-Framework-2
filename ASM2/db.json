@@ -8,35 +8,10 @@
       "id": 2
     },
     {
-      "email": "nhi1@gmail.com",
-      "password": "$2a$10$A.TBXsIoyffiS8Eo7sd1vuR76eV7Fp35ahl9ZWaw3sF96tJ2WVse2",
-      "id": 3,
-      "name": "name2"
-    },
-    {
-      "email": "hanhbabe@gmail.com",
-      "password": "$2a$10$AR3JfD7IKbNZXlwUzwPKE.veh4OPX.mqDAZBWlcN0s1.Bn8Wn1bn.",
-      "id": 4
-    },
-    {
-      "email": "phunhph33261@fpt.edu.vn",
-      "password": "$2a$10$RRG8fvHF1Zr0nc.zFXupOe/EriXiBF.dCxeuB/m00jQYSXeZucScO",
-      "id": 5
-    },
-    {
-      "email": "myanh419@gmail.com",
-      "password": "$2a$10$89XowpWltR0wCdEydGBtEOTLLNYtlsHmqq74pl0vtYuP4DML6r48e",
-      "id": 6
-    },
-    {
       "email": "myanhnguyen419@gmail.com",
-      "password": "$2a$10$rFtHOy1uJnzOsCCNEQJiM.mPasTHVomvCaYFXSXc9i2p2jpkI4y5G",
-      "id": 7
-    },
-    {
-      "email": "usbrit914@gmail.com",
-      "password": "$2a$10$KaqHHiu1.QoNyyXsBsuOMuIf.EIVPpvrUWXuKK75x4mU4oxuoRQ9u",
-      "id": 8
+      "password": "$2a$10$Rv8im07pz1LndO6n41JYHu.qW3bazDuMcSkCFoGi68SYkwvGH0iz.",
+      "id": 7,
+      "role": "1"
     }
   ],
   "categorys": [
@@ -51,22 +26,11 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "Mand I Sofa Two Seat",
       "description": "Description for Product 1",
-      "quantity": 32,
-      "price": 236,
-      "category": 1,
-      "image": "./src/image/09.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Product 2",
-      "description": "UNI I Sofa (CCB)",
-      "quantity": 24,
-      "price": 192,
-      "category": 1,
-      "image": "./src/image/1-15.png"
+      "quantity": "0",
+      "price": "1",
+      "id": 1
     },
     {
       "id": 3,
@@ -197,7 +161,7 @@
       "id": 17,
       "name": "UNI I Sofa (CFV)",
       "description": "Description for Product 17",
-      "quantity": 82,
+      "quantity": 80,
       "category": 2,
       "price": 53,
       "image": "./src/image/2-4.png"
@@ -350,7 +314,7 @@
       "id": 34,
       "name": "UNI I Sofa (CAF)",
       "description": "Description for Product 34",
-      "quantity": 55,
+      "quantity": 54,
       "category": 2,
       "price": 81,
       "image": "./src/image/31-Shell-I-Sofa-ver2.png"
@@ -385,7 +349,7 @@
       "id": 38,
       "name": "UNI I Sofa (CF)",
       "description": "Description for Product 38",
-      "quantity": 48,
+      "quantity": 46,
       "category": 2,
       "price": 149,
       "image": "./src/image/UNI-186x93x62-ac-avocat_c.png"
@@ -394,7 +358,7 @@
       "id": 39,
       "name": "UNI I Sofa (CF)",
       "description": "Description for Product 39",
-      "quantity": 35,
+      "quantity": 24,
       "category": 2,
       "price": 73,
       "image": "./src/image/5-pige-4s-nau-vang.png"
@@ -403,19 +367,41 @@
       "id": 40,
       "name": "UNI I Sofa (CFK)",
       "description": "Description for Product 40",
-      "quantity": 30,
+      "quantity": 1,
       "category": 2,
       "price": 214,
       "image": "./src/image/10-Sofa-Semina-xam-nhat-den.png"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "user_id": 9,
+      "product_id": 39,
+      "quantity": 9,
+      "total": 657,
+      "id": 1
+    },
+    {
+      "id": 1722588696727,
+      "user_id": 3,
+      "product_id": 17,
+      "quantity": 1,
+      "total": 53
+    },
+    {
+      "id": 1722593359050,
+      "user_id": 3,
+      "product_id": 38,
+      "quantity": 1,
+      "total": 149
+    }
+  ],
   "orders": [
     {
       "id": 1,
-      "user_id": 2,
-      "quantity": 3,
-      "total": 150,
+      "user_id": 4,
+      "quantity": 14,
+      "total": 1000000,
       "status": 1
     },
     {
@@ -423,6 +409,90 @@
       "user_id": 3,
       "quantity": 1,
       "total": 50,
+      "status": 0
+    },
+    {
+      "id": 1722525860150,
+      "user_id": 4,
+      "quantity": 14,
+      "total": 2443,
+      "status": 1
+    },
+    {
+      "id": 1722526027502,
+      "user_id": 4,
+      "quantity": 14,
+      "total": 2443,
+      "status": 1
+    },
+    {
+      "id": 1722527186649,
+      "user_id": 4,
+      "quantity": 3,
+      "total": 642,
+      "status": 1
+    },
+    {
+      "id": 1722527299584,
+      "user_id": 4,
+      "quantity": 2,
+      "total": 287,
+      "status": 1
+    },
+    {
+      "id": 1722527314959,
+      "user_id": 4,
+      "quantity": 4,
+      "total": 292,
+      "status": 1
+    },
+    {
+      "id": 1722530294284,
+      "user_id": 4,
+      "quantity": 5,
+      "total": 365,
+      "status": 1
+    },
+    {
+      "id": 1722530333303,
+      "user_id": 4,
+      "quantity": 2,
+      "total": 222,
+      "status": 1
+    },
+    {
+      "id": 1722535604221,
+      "user_id": 3,
+      "quantity": 1,
+      "total": 149,
+      "status": 1
+    },
+    {
+      "id": 1722535819791,
+      "user_id": 3,
+      "quantity": 2,
+      "total": 298,
+      "status": 1
+    },
+    {
+      "id": 1722535851125,
+      "user_id": 3,
+      "quantity": 1,
+      "total": 81,
+      "status": 1
+    },
+    {
+      "id": 1722593824840,
+      "user_id": 3,
+      "quantity": 2,
+      "total": 202,
+      "status": 1
+    },
+    {
+      "id": 1722600402849,
+      "user_id": 1722598026421,
+      "quantity": 1,
+      "total": 53,
       "status": 1
     }
   ],
@@ -447,6 +517,69 @@
       "product_id": 1,
       "quantity": 1,
       "total": 50
+    },
+    {
+      "id_order": 1722530294284,
+      "product_id": 39,
+      "quantity": 5,
+      "total": 365,
+      "id": 4
+    },
+    {
+      "id_order": 1722530333303,
+      "product_id": 39,
+      "quantity": 1,
+      "total": 73,
+      "id": 5
+    },
+    {
+      "id_order": 1722530333303,
+      "product_id": 38,
+      "quantity": 1,
+      "total": 149,
+      "id": 6
+    },
+    {
+      "id_order": 1722535604221,
+      "product_id": 38,
+      "quantity": 1,
+      "total": 149,
+      "id": 7
+    },
+    {
+      "id_order": 1722535819791,
+      "product_id": 38,
+      "quantity": 2,
+      "total": 298,
+      "id": 8
+    },
+    {
+      "id_order": 1722535851125,
+      "product_id": 34,
+      "quantity": 1,
+      "total": 81,
+      "id": 9
+    },
+    {
+      "id_order": 1722593824840,
+      "product_id": 17,
+      "quantity": 1,
+      "total": 53,
+      "id": 10
+    },
+    {
+      "id_order": 1722593824840,
+      "product_id": 38,
+      "quantity": 1,
+      "total": 149,
+      "id": 11
+    },
+    {
+      "id_order": 1722600402849,
+      "product_id": 17,
+      "quantity": 1,
+      "total": 53,
+      "id": 12
     }
   ]
 }

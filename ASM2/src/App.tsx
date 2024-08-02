@@ -20,6 +20,8 @@ import OrderEditPage from "./pages/admin/orders/order-fix";
 import LogoutPage from "./pages/login/Logout";
 import ForgotPasswordPage from "./pages/login/ForgotPassword";
 import ProductDetail from "./pages/client/productDetail";
+import CheckoutPage from "./pages/client/CheckOutPage";
+import OrderDetailPage from "./pages/client/OrderDetail";
 
 const App: React.FC = () => {
   return (
@@ -29,9 +31,11 @@ const App: React.FC = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/productDetail/:id" element={<ProductDetail />} />
+          <Route path="/orders/:id" element={<OrderDetailPage />} />
 
           <Route path="/categories/:id" element={<CategoriesPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/login" element={<LoginPage isLogin />} />
           <Route path="/register" element={<LoginPage />} />

@@ -11,14 +11,12 @@ import {
   Box,
   Button,
 } from "@mui/material";
-
-import { Order, OrderDetails } from "../../../interfaces/order";
-import { Product } from "../../../interfaces/product";
-import OrderService from "../../../services/repositories/order/order";
-import OrderDetailService from "../../../services/repositories/order/orderDetail";
-import ProductService from "../../../services/repositories/products/Product";
-import UserService from "../../../services/repositories/users/UserService";
-import { User } from "../../../interfaces/user";
+import { Order, OrderDetails } from "../../interfaces/order";
+import { Product } from "../../interfaces/product";
+import OrderService from "../../services/repositories/order/order";
+import OrderDetailService from "../../services/repositories/order/orderDetail";
+import ProductService from "../../services/repositories/products/Product";
+import UserService from "../../services/repositories/users/UserService";
 
 const OrderDetailsPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,29 +25,30 @@ const OrderDetailsPage: React.FC = () => {
   const [orderDetails, setOrderDetails] = useState<OrderDetails[]>([]);
   const [products, setProducts] = useState<Record<number, Product>>({});
   const [userName, setUserName] = useState<string>("");
-  const nav = useNavigate();
-  useEffect(() => {
-    const userString = localStorage.getItem("user");
 
-    const user: User | null = userString ? JSON.parse(userString) : null;
-    if (user?.role === 1) {
-      const fetchOrderDetails = async () => {
-        try {
-          const orderResponse = await OrderService.getOrderById(parseInt(id!));
+  useEffect(() => {
+    const fetchOrderDetails = async () => {
+      try {
+        if (id) {
+          // Fetch order details
+          const orderResponse = await OrderService.getOrderById(parseInt(id));
           setOrder(orderResponse);
 
+          // Fetch order details
           const detailsResponse =
-            await OrderDetailService.getOrderDetailsByOrderId(parseInt(id!));
+            await OrderDetailService.getOrderDetailsByOrderId(parseInt(id));
           setOrderDetails(detailsResponse);
 
+          // Fetch products
           const productIds = [
             ...new Set(detailsResponse.map((detail) => detail.product_id)),
           ];
           const productPromises = productIds.map((id) =>
             ProductService.getProductById(id)
           );
-
           const productResponses = await Promise.all(productPromises);
+
+          // Map products
           const productMap = productResponses.reduce((acc, product) => {
             acc[product.id] = product;
             return acc;
@@ -61,16 +60,13 @@ const OrderDetailsPage: React.FC = () => {
             orderResponse.user_id
           );
           setUserName(userResponse.name);
-        } catch (error) {
-          console.error("Error fetching order details:", error);
         }
-      };
-      fetchOrderDetails();
-    } else if (!user) {
-      nav("/login");
-    } else {
-      nav("/");
-    }
+      } catch (error) {
+        console.error("Error fetching order details:", error);
+      }
+    };
+
+    fetchOrderDetails();
   }, [id]);
 
   const handleBack = () => {
@@ -102,8 +98,9 @@ const OrderDetailsPage: React.FC = () => {
       </Box>
       {order && (
         <div className="mb-5 ml-4 d-flex">
-          <Typography variant="h6">Order ID: {order.id}</Typography>
-          <Typography>User Name: {userName}</Typography>
+          <Typography><b>Information</b> </Typography>
+          <Typography>Order ID: {order.id}</Typography>
+          <Typography>User: {userName}</Typography>
           <Typography>Quantity: {order.quantity}</Typography>
           <Typography>Total: ${order.total}</Typography>
         </div>
@@ -124,12 +121,14 @@ const OrderDetailsPage: React.FC = () => {
               return (
                 <TableRow key={detail.id}>
                   <TableCell>
-                    {product?.image && (
+                    {product?.image ? (
                       <img
-                      src={`.${product.image}`}
-                      alt={product.name}
-                      style={{ width: 150, height: 150, objectFit: "cover" }}
-                    />
+                        src={`.${product.image}`}
+                        alt={product.name}
+                        style={{ width: 150, height: 150, objectFit: "cover" }}
+                      />
+                    ) : (
+                      <Typography>No Image</Typography>
                     )}
                   </TableCell>
                   <TableCell>{product?.name || "N/A"}</TableCell>

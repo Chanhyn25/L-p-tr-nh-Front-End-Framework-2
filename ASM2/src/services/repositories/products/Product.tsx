@@ -25,7 +25,9 @@ class ProductService {
   }
   public static async getProductsByCategory(id: number): Promise<Product[]> {
     try {
-      const response = await instance.get<Product[]>(`/products?category=${id}`);
+      const response = await instance.get<Product[]>(
+        `/products?category=${id}`
+      );
       return response.data;
     } catch (error) {
       console.error(`Error fetching user with ID ${id}`, error);
@@ -43,6 +45,23 @@ class ProductService {
     }
   }
 
+  public static async updateProductQuantity(
+    id: number,
+    quantity: number
+  ): Promise<void> {
+    try {
+      // Lấy thông tin sản phẩm hiện tại
+      const response = await instance.get<Product>(`/products/${id}`);
+      const currentQuantity = response.data.quantity;
+
+      const updatedQuantity = currentQuantity - quantity;
+
+      await instance.patch(`/products/${id}`, { quantity: updatedQuantity });
+    } catch (error) {
+      console.error(`Error updating quantity for product with ID ${id}`, error);
+      throw error;
+    }
+  }
   // Update an existing user
   public static async updateProduct(
     id: number,
