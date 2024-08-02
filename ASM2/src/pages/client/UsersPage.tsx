@@ -19,6 +19,7 @@ const UsersPage: React.FC = () => {
     password: "",
     confirmPass: "",
     role: 0,
+    avatar: "", // Add avatar field
   });
   const [orders, setOrders] = useState<any[]>([]); // Replace with appropriate type
 
@@ -64,6 +65,20 @@ const UsersPage: React.FC = () => {
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prev) => ({
+          ...prev,
+          avatar: reader.result as string,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -96,6 +111,20 @@ const UsersPage: React.FC = () => {
         {user ? (
           <>
             <h2 className="text-2xl font-semibold mb-4">Profile Information</h2>
+            <div className="flex items-center mb-4">
+              <img
+                src={formData.avatar}
+                alt="Avatar"
+                className="w-24 h-24 rounded-full border border-gray-300"
+              />
+              {editMode && (
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  className="ml-4"
+                />
+              )}
+            </div>
             {editMode ? (
               <form onSubmit={handleSave}>
                 <div className="mb-4">
@@ -152,7 +181,7 @@ const UsersPage: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center px-4 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
                 >
                   Save
                 </button>
@@ -180,9 +209,15 @@ const UsersPage: React.FC = () => {
                 </p>
                 <button
                   onClick={handleEditToggle}
-                  className="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center px-5 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
                 >
                   Edit
+                </button>
+                <button
+                  
+                  className="inline-flex items-center ml-2 px-5 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
+                >
+                  Log Out
                 </button>
               </div>
             )}
@@ -244,7 +279,7 @@ const UsersPage: React.FC = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <button
                       onClick={() => handleViewOrderDetails(order.id)}
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      className="inline-flex items-center px-4 py-2 bg-black border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-gray-700"
                     >
                       View Details
                     </button>
@@ -262,3 +297,4 @@ const UsersPage: React.FC = () => {
 };
 
 export default UsersPage;
+

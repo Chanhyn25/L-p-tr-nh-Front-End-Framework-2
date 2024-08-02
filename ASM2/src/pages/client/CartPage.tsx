@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../../interfaces/user";
 import CartService from "../../services/repositories/cart/cart";
 import ProductService from "../../services/repositories/products/Product";
-import { Cart } from "../../interfaces/cart";
-import { Product } from "../../interfaces/product";
-
+import { Cart, Product } from "../../interfaces"; // Import các kiểu dữ liệu nếu có
 
 const CartPage: React.FC = () => {
   const [cartItems, setCartItems] = useState<Cart[]>([]);
+  const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set()); // Theo dõi các mục đã chọn
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -67,14 +66,43 @@ const CartPage: React.FC = () => {
     }
   };
 
+  const handleCheckboxChange = (id: number) => {
+    setSelectedItems((prev) => {
+      const newSelectedItems = new Set(prev);
+      if (newSelectedItems.has(id)) {
+        newSelectedItems.delete(id);
+      } else {
+        newSelectedItems.add(id);
+      }
+      return newSelectedItems;
+    });
+  };
+
+  const handleDeleteSelected = async () => {
+    if (window.confirm("Are you sure you want to delete the selected items?")) {
+      try {
+        for (const id of selectedItems) {
+          await CartService.deleteCartItem(id);
+        }
+        const userString = localStorage.getItem("user");
+        const user: User | null = userString ? JSON.parse(userString) : null;
+        if (user) {
+          fetchCartItems(user.id);
+        }
+        setSelectedItems(new Set()); // Clear selected items after deletion
+      } catch (error) {
+        console.error("Error deleting items:", error);
+        alert("Failed to delete selected items.");
+      }
+    }
+  };
+
   const handleCheckout = () => {
     const userString = localStorage.getItem("user");
     const user: User | null = userString ? JSON.parse(userString) : null;
     if (user) {
-      // Điều hướng đến trang thanh toán
       navigate("/checkout");
     } else {
-      // Nếu không có người dùng đăng nhập, điều hướng đến trang đăng nhập
       navigate("/login");
     }
   };
@@ -103,52 +131,72 @@ const CartPage: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">Your Cart</h1>
+
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <input
+                  type="checkbox"
+                  className="form-checkbox"
+                  onChange={() => {
+                    if (selectedItems.size === cartItems.length) {
+                      setSelectedItems(new Set());
+                    } else {
+                      setSelectedItems(new Set(cartItems.map((item) => item.id_cart)));
+                    }
+                  }}
+                  checked={selectedItems.size === cartItems.length}
+                />
+              </th>
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Image
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Price
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Quantity
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Total
               </th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {cartItems.length > 0 ? (
               cartItems.map((item) => (
                 <tr key={item.id_cart}>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <input type="checkbox" className="form-checkbox" />
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <input
+                      type="checkbox"
+                      className="form-checkbox"
+                      checked={selectedItems.has(item.id_cart)}
+                      onChange={() => handleCheckboxChange(item.id_cart)}
+                    />
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
                     <img
-                      src={item.image || "default-image.jpg"} // Placeholder if image URL is not available
+                      src={item.image || "default-image.jpg"}
                       alt={item.name}
                       className="w-24 h-24 object-cover"
                     />
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <td className="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {item.name}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-6 text-center py-4 whitespace-nowrap text-sm text-black">
                     ${item.price}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="text-center px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center justify-center space-x-2">
                       <button
-                        className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="px-3 py-1 bg-black text-white rounded hover:bg-gray-600"
                         type="button"
                         onClick={() => handleQuantityChange(item.id_cart, -1)}
                       >
@@ -156,12 +204,12 @@ const CartPage: React.FC = () => {
                       </button>
                       <input
                         type="number"
-                        className="w-16 text-center border border-gray-300 rounded"
+                        className="w-10 text-right border border-gray-300 rounded"
                         value={item.quantity_cart}
                         readOnly
                       />
                       <button
-                        className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="px-3 py-1 bg-black text-white rounded hover:bg-gray-600"
                         type="button"
                         onClick={() => handleQuantityChange(item.id_cart, 1)}
                       >
@@ -169,14 +217,36 @@ const CartPage: React.FC = () => {
                       </button>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="text-center px-6 py-4 whitespace-nowrap text-sm text-black">
                     ${item.total_cart}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <button
+                      className="text-black bg-white"
+                      onClick={async () => {
+                        if (window.confirm("Are you sure you want to delete this item?")) {
+                          try {
+                            await CartService.deleteCartItem(item.id_cart);
+                            const userString = localStorage.getItem("user");
+                            const user: User | null = userString ? JSON.parse(userString) : null;
+                            if (user) {
+                              fetchCartItems(user.id);
+                            }
+                          } catch (error) {
+                            console.error("Error deleting item:", error);
+                            alert("Failed to delete item.");
+                          }
+                        }
+                      }}
+                    >
+                     <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon>
+                    </button>
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="6" className="px-6 py-4 text-center text-gray-500">
+                <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
                   Your cart is empty
                 </td>
               </tr>
@@ -190,7 +260,7 @@ const CartPage: React.FC = () => {
               >
                 <strong>Total:</strong>
               </td>
-              <td className="px-6 py-3 text-sm font-medium text-gray-900">
+              <td className="px-6 py-3 text-sm text-center font-medium text-gray-900">
                 <strong>
                   $
                   {cartItems
@@ -202,16 +272,28 @@ const CartPage: React.FC = () => {
           </tfoot>
         </table>
       </div>
-      <div className="text-right mt-4">
-        <button
-          className="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-          onClick={handleCheckout}
-        >
-          Checkout
-        </button>
+      <div className="flex justify-between mt-4">
+        <div className="text-left">
+          <button
+            className="px-4 py-2 bg-gray-600 text-white font-semibold rounded hover:bg-gray-700 "
+            onClick={handleDeleteSelected}
+            disabled={selectedItems.size === 0}
+          >
+            Delete Selected
+          </button>
+        </div>
+        <div className="text-right">
+          <button
+            className="px-4 py-2 bg-black text-white font-semibold rounded hover:bg-gray-600 "
+            onClick={handleCheckout}
+          >
+            Checkout
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default CartPage;
+

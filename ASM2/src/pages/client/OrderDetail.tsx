@@ -75,28 +75,34 @@ const OrderDetailsPage: React.FC = () => {
 
   return (
     <div className="p-4">
-      <Button
-        onClick={handleBack}
-        variant="outlined"
-        style={{
-          backgroundColor: "black",
-          color: "white",
-          textAlign: "center",
-          marginBottom: "10px",
-        }}
-        className="mb-4"
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        mb={4}
       >
-        Order Management
-      </Button>
-      <Typography variant="h4" className="mb-4">
-        Order Details
-      </Typography>
+        <Typography variant="h4">
+          Order Details
+        </Typography>
+        <Button
+          onClick={handleBack}
+          variant="outlined"
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          Order History
+        </Button>
+      </Box>
       {order && (
-        <div className="mb-4 d-flex">
-          <Typography variant="h6">Order ID: {order.id}</Typography>
-          <Typography>User Name: {userName}</Typography>
+        <div className="mb-5 ml-4 d-flex">
+          <Typography><b>Information</b> </Typography>
+          <Typography>Order ID: {order.id}</Typography>
+          <Typography>User: {userName}</Typography>
           <Typography>Quantity: {order.quantity}</Typography>
-          <Typography>Total: {order.total}</Typography>
+          <Typography>Total: ${order.total}</Typography>
         </div>
       )}
       <TableContainer>
@@ -119,7 +125,7 @@ const OrderDetailsPage: React.FC = () => {
                       <img
                         src={`.${product.image}`}
                         alt={product.name}
-                        style={{ width: 100, height: 100, objectFit: "cover" }}
+                        style={{ width: 150, height: 150, objectFit: "cover" }}
                       />
                     ) : (
                       <Typography>No Image</Typography>
@@ -127,7 +133,7 @@ const OrderDetailsPage: React.FC = () => {
                   </TableCell>
                   <TableCell>{product?.name || "N/A"}</TableCell>
                   <TableCell>{detail.quantity}</TableCell>
-                  <TableCell>{detail.total}</TableCell>
+                  <TableCell>${detail.total}</TableCell>
                 </TableRow>
               );
             })}

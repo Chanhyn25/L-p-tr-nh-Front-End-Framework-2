@@ -7,14 +7,6 @@ const AdminSidebar: React.FC = () => {
       <ul className="flex justify-between bg-gray-900 p-2 rounded">
         <li className="text-center flex-1">
           <Link
-            to="/admin"
-            className="block p-2 text-white hover:bg-gray-400 rounded"
-          >
-            Dashboard
-          </Link>
-        </li>
-        <li className="text-center flex-1">
-          <Link
             to="/admin/users"
             className="block p-2 text-white hover:bg-gray-400 rounded"
           >

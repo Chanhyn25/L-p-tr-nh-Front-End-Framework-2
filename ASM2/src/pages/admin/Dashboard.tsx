@@ -20,21 +20,11 @@ const Dashboard = () => {
   }, [nav]);
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-      <div className="d-flex justify-content-between">
-        <a href="/" className="link-black">
-          admin
-        </a>
-        <a href="/admin/products/add" className="link-black">
-          Add
-        </a>
-        <a href="/login" className="link-black">
-          Login
-        </a>
-        <a href="/register" className="link-black">
-          Register
-        </a>
-      </div>
+      <h1 className="text-2xl font-bold mb-4">
+        WELCOME TO ROYAL SOFAS ADMIN
+      </h1>
+      <p>Let's manage the Royal Sofas website now.</p>
+      
     </div>
   );
 };

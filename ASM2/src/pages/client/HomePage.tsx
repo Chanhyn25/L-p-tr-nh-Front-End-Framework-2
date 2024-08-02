@@ -54,11 +54,11 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
       </div>
 
-      <p className=" mt-10 text-4xl ">
+      <p className=" mt-10 mb-5 text-4xl ">
         {" "}
         <>New Arrivals</>{" "}
       </p>
-      <div className="mt-8 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {products.map((product) => (
           <div
             key={product.id}
@@ -76,22 +76,19 @@ const HomePage: React.FC = () => {
                 }}
                 className="rounded-[5px]"
               />
-            </Link>{" "}
+            </Link>
+            <Link  to={`/productDetail/${product.id}`}>
             <h1 className="text-xl font-bold mb-2 text-center text-white">
               {product.name}
             </h1>
-            <p className="mb-2 text-white">{product.description}</p>
-            <p className="text-white">
-              Price: <b>${product.price}</b>
-            </p>
-            <p className="text-white">Quantity: {product.quantity}</p>
+            </Link>
             <div className="flex justify-center mt-2">
-              <div className="flex justify-center items-center space-x-2 mt-2 bg-white rounded-[5px] w-40 h-10">
+              <div className="flex justify-center items-center space-x-2 mt-4 mb-3 bg-white rounded-[5px] w-30 h-3">
                 <Link
                   to={`/productDetail/${product.id}`}
                   className="hover:text-gray-300 flex items-center"
                 >
-                  <button className="bg-white text-black px-5 py-1 rounded-[15px]">
+                  <button className="bg-white text-black px-5 py-1 rounded-[5px]">
                     View detail
                   </button>
                 </Link>

@@ -1,96 +1,117 @@
-// src/pages/ProductCreate.tsx
 import React, { useEffect, useState } from "react";
-import { Product } from "../../../interfaces/product";
-import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import ProductService from "../../../services/repositories/products/Product";
+import { Product } from "../../../interfaces/product";
 import { User } from "../../../interfaces/user";
+import { useNavigate } from "react-router-dom";
+import { productSchema } from "../../../utils/valtidation";
+
 
 const ProductCreate: React.FC = () => {
-  const [name, setName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [quantity, setQuantity] = useState<number>(0);
-  const [price, setPrice] = useState<number>(0);
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<Product>({
+    resolver: zodResolver(productSchema),
+  });
 
   const nav = useNavigate();
+
   useEffect(() => {
     const userString = localStorage.getItem("user");
-
     const user: User | null = userString ? JSON.parse(userString) : null;
-    if (user?.role === 1) {
-     
-    } else if(!user) {
+    if (!user || user.role !== 1) {
       nav("/login");
     }
   }, [nav]);
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const onSubmit = async (data: Product) => {
     try {
-      const newProduct: Product = {
-        id: Date.now(),
-        name,
-        image,
-        description,
-        quantity,
-        price,
-      };
-      await ProductService.createProduct(newProduct);
-      setSuccess("Product created successfully");
-      setName("");
-      setImage("");
-      setDescription("");
-      setQuantity(0);
-      setPrice(0);
+      const formData = new FormData();
+      if (imageFile) {
+        formData.append("image", imageFile);
+      }
+      formData.append("name", data.name);
+      formData.append("description", data.description || '');
+      formData.append("quantity", String(data.quantity));
+      formData.append("price", String(data.price));
+
+      await ProductService.createProduct(formData);
+      reset(); // Reset the form after successful submission
       nav("/admin/products");
     } catch (error) {
-      setError("Failed to create product");
-      console.error(error);
+      console.error("Failed to create product:", error);
+    }
+  };
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] || null;
+    setImageFile(file);
+
+    if (file) {
+      // Create a URL for the image to use as preview
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setPreviewImage(null);
     }
   };
 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Create Product</h1>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
-      {success && <p className="text-green-500 mb-4">{success}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Name:
           </label>
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            {...register("name")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.name && <p className="text-red-500">{errors.name.message}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Image URL:
+            Image:
           </label>
           <input
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {previewImage && (
+            <div className="mt-2">
+              <img
+                src={previewImage}
+                alt="Preview"
+                className="border rounded w-48 h-48 object-cover"
+              />
+            </div>
+          )}
+          {errors.image && <p className="text-red-500">{errors.image.message}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Description:
           </label>
           <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            {...register("description")}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.description && <p className="text-red-500">{errors.description.message}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
@@ -98,11 +119,10 @@ const ProductCreate: React.FC = () => {
           </label>
           <input
             type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
+            {...register("quantity", { valueAsNumber: true })}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.quantity && <p className="text-red-500">{errors.quantity.message}</p>}
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
@@ -110,15 +130,14 @@ const ProductCreate: React.FC = () => {
           </label>
           <input
             type="number"
-            value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            {...register("price", { valueAsNumber: true })}
             className="border rounded px-3 py-2 w-full"
-            required
           />
+          {errors.price && <p className="text-red-500">{errors.price.message}</p>}
         </div>
         <button
           type="submit"
-          className="bg-black-500 text-white px-4 py-2 rounded "
+          className="bg-black-500 text-white px-4 py-2 rounded"
         >
           Create
         </button>

@@ -25,7 +25,7 @@ const MainHeader: React.FC = () => {
   };
 
   return (
-    <header className="bg-black text-white p-8">
+    <header className="bg-black text-white p-6">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold">Royal Sofas</h1>
         <nav>
