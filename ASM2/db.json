@@ -27,7 +27,7 @@
   "products": [
     {
       "name": "Mand I Sofa Two Seat",
-      "description": "Description for Product 1",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.1",
       "quantity": "0",
       "price": "1",
       "id": 1
@@ -35,7 +35,7 @@
     {
       "id": 3,
       "name": "UNI I Sofa (ACB)",
-      "description": "Description for Product 3",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.3",
       "quantity": 1,
       "price": 216,
       "category": 1,
@@ -44,7 +44,7 @@
     {
       "id": 4,
       "name": "UNI I Sofa (DAB)",
-      "description": "Description for Product 4",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.4",
       "quantity": 74,
       "price": 105,
       "category": 1,
@@ -53,7 +53,7 @@
     {
       "id": 5,
       "name": "UNI I Sofa (DCB)",
-      "description": "Description for Product 5",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.5",
       "quantity": 22,
       "price": 79,
       "category": 1,
@@ -62,7 +62,7 @@
     {
       "id": 6,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 6",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.6",
       "quantity": 29,
       "price": 81,
       "image": "./src/image/10-Sofa-Semina-xam-nhat-den.png"
@@ -70,7 +70,7 @@
     {
       "id": 7,
       "name": "UNI I Sofa (CAF)",
-      "description": "Description for Product 7",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.7",
       "quantity": 45,
       "price": 88,
       "category": 1,
@@ -79,7 +79,7 @@
     {
       "id": 8,
       "name": "UNI I Sofa (CAF)",
-      "description": "Description for Product 8",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.8",
       "quantity": 25,
       "price": 234,
       "category": 1,
@@ -88,7 +88,7 @@
     {
       "id": 9,
       "name": "UNI I Sofa (CFA)",
-      "description": "Description for Product 9",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.9",
       "quantity": 55,
       "category": 1,
       "price": 128,
@@ -97,7 +97,7 @@
     {
       "id": 10,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 10",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.10",
       "quantity": 95,
       "price": 81,
       "category": 1,
@@ -106,7 +106,7 @@
     {
       "id": 11,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 11",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.11",
       "quantity": 54,
       "category": 1,
       "price": 198,
@@ -115,7 +115,7 @@
     {
       "id": 12,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 12",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.12",
       "quantity": 57,
       "category": 1,
       "price": 87,
@@ -124,7 +124,7 @@
     {
       "id": 13,
       "name": "UNI I Sofa (CAF)",
-      "description": "Description for Product 13",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.13",
       "quantity": 40,
       "price": 248,
       "category": 1,
@@ -133,7 +133,7 @@
     {
       "id": 14,
       "name": "UNI I Sofa (CFC)",
-      "description": "Description for Product 14",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.14",
       "quantity": 1,
       "category": 1,
       "price": 120,
@@ -142,7 +142,7 @@
     {
       "id": 15,
       "name": "UNI I Sofa (CAF)",
-      "description": "Description for Product 15",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.15",
       "quantity": 96,
       "category": 1,
       "price": 130,
@@ -151,7 +151,7 @@
     {
       "id": 16,
       "name": "UNI I Sofa (CFA)",
-      "description": "Description for Product 16",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.16",
       "quantity": 83,
       "category": 2,
       "price": 217,
@@ -160,7 +160,7 @@
     {
       "id": 17,
       "name": "UNI I Sofa (CFV)",
-      "description": "Description for Product 17",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.17",
       "quantity": 80,
       "category": 2,
       "price": 53,
@@ -169,7 +169,7 @@
     {
       "id": 18,
       "name": "UNI I Sofa (CFG)",
-      "description": "Description for Product 18",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.18",
       "quantity": 87,
       "category": 2,
       "price": 127,
@@ -178,7 +178,7 @@
     {
       "id": 19,
       "name": "UNI I Sofa (CCF)",
-      "description": "Description for Product 19",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.19",
       "quantity": 8,
       "category": 2,
       "price": 114,
@@ -187,7 +187,7 @@
     {
       "id": 20,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 20",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.20",
       "quantity": 12,
       "category": 2,
       "price": 174,
@@ -196,7 +196,7 @@
     {
       "id": 21,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 21",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.21",
       "quantity": 58,
       "category": 2,
       "price": 77,
@@ -205,7 +205,7 @@
     {
       "id": 22,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 22",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.22",
       "quantity": 55,
       "price": 143,
       "category": 2,
@@ -214,7 +214,7 @@
     {
       "id": 23,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 23",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.23",
       "quantity": 52,
       "category": 2,
       "price": 131,
@@ -223,7 +223,7 @@
     {
       "id": 24,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 24",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.24",
       "quantity": 82,
       "category": 2,
       "price": 105,
@@ -232,7 +232,7 @@
     {
       "id": 25,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 25",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.25",
       "quantity": 40,
       "category": 2,
       "price": 94,
@@ -241,7 +241,7 @@
     {
       "id": 26,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 26",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.26",
       "quantity": 29,
       "category": 2,
       "price": 51,
@@ -250,7 +250,7 @@
     {
       "name": "UNI I Sofa (CF)",
       "image": "./src/image/46-Mand-Modul-2-2-1.png",
-      "description": "Description for Product 27",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.27",
       "quantity": 37,
       "category": 2,
       "price": 144,
@@ -259,7 +259,7 @@
     {
       "id": 28,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 28",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.28",
       "quantity": 42,
       "category": 2,
       "price": 237,
@@ -268,7 +268,7 @@
     {
       "id": 29,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 29",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.29",
       "quantity": 75,
       "category": 2,
       "price": 232,
@@ -277,7 +277,7 @@
     {
       "id": 30,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 30",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.30",
       "quantity": 55,
       "price": 215,
       "category": 2,
@@ -286,7 +286,7 @@
     {
       "id": 31,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 31",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.31",
       "quantity": 8,
       "category": 2,
       "price": 115,
@@ -295,7 +295,7 @@
     {
       "id": 32,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 32",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.32",
       "quantity": 59,
       "category": 2,
       "price": 201,
@@ -304,7 +304,7 @@
     {
       "id": 33,
       "name": "UNI I Sofa (CFG)",
-      "description": "Description for Product 33",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.33",
       "quantity": 24,
       "category": 2,
       "price": 149,
@@ -313,7 +313,7 @@
     {
       "id": 34,
       "name": "UNI I Sofa (CAF)",
-      "description": "Description for Product 34",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.34",
       "quantity": 54,
       "category": 2,
       "price": 81,
@@ -322,7 +322,7 @@
     {
       "id": 35,
       "name": "UNI I Sofa (CFN)",
-      "description": "Description for Product 35",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.35",
       "quantity": 65,
       "price": 122,
       "image": "./src/image/7-3.png"
@@ -330,7 +330,7 @@
     {
       "id": 36,
       "name": "UNI I Sofa (CFJ)",
-      "description": "Description for Product 36",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.36",
       "quantity": 41,
       "category": 2,
       "price": 168,
@@ -339,7 +339,7 @@
     {
       "id": 37,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 37",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.37",
       "quantity": 18,
       "category": 2,
       "price": 75,
@@ -348,7 +348,7 @@
     {
       "id": 38,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 38",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.38",
       "quantity": 46,
       "category": 2,
       "price": 149,
@@ -357,7 +357,7 @@
     {
       "id": 39,
       "name": "UNI I Sofa (CF)",
-      "description": "Description for Product 39",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.39",
       "quantity": 24,
       "category": 2,
       "price": 73,
@@ -366,7 +366,7 @@
     {
       "id": 40,
       "name": "UNI I Sofa (CFK)",
-      "description": "Description for Product 40",
+      "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.40",
       "quantity": 1,
       "category": 2,
       "price": 214,
@@ -392,8 +392,22 @@
       "id": 1722593359050,
       "user_id": 3,
       "product_id": 38,
+      "quantity": 7,
+      "total": 1043
+    },
+    {
+      "id": 1722606547907,
+      "user_id": 3,
+      "product_id": 39,
       "quantity": 1,
-      "total": 149
+      "total": 73
+    },
+    {
+      "id": 1722607416752,
+      "user_id": 3,
+      "product_id": 4,
+      "quantity": 4,
+      "total": 420
     }
   ],
   "orders": [

@@ -77,10 +77,10 @@ const HomePage: React.FC = () => {
                 className="rounded-[5px]"
               />
             </Link>
-            <Link  to={`/productDetail/${product.id}`}>
-            <h1 className="text-xl font-bold mb-2 text-center text-white">
-              {product.name}
-            </h1>
+            <Link to={`/productDetail/${product.id}`}>
+              <h1 className="text-xl font-bold mb-2 text-center text-white">
+                {product.name}
+              </h1>
             </Link>
             <div className="flex justify-center mt-2">
               <div className="flex justify-center items-center space-x-2 mt-4 mb-3 bg-white rounded-[5px] w-30 h-3">
