@@ -11,6 +11,10 @@ import {
   Button,
   Paper,
   Typography,
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { User } from "../../interfaces/user";
@@ -24,6 +28,7 @@ const CategoriesPage: React.FC = () => {
   const [rowsPerPage] = useState(8);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const nav = useNavigate();
   useEffect(() => {
@@ -63,8 +68,25 @@ const CategoriesPage: React.FC = () => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+
+  const handleSortChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setSortOrder(event.target.value as string);
+  };
+
+  const sortProducts = (products: Product[]) => {
+    return products.sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+  };
+
+  const filteredProducts = sortProducts(
+    products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
   );
 
   return (
@@ -92,6 +114,14 @@ const CategoriesPage: React.FC = () => {
         }}
         className="mb-4"
       />
+
+      <FormControl variant="outlined" style={{ marginBottom: "20px" }} fullWidth size="small" className="mb-4">
+        <InputLabel>Sort by Price</InputLabel>
+        <Select value={sortOrder} onChange={handleSortChange} label="Sort by Price">
+          <MenuItem value="asc">Ascending</MenuItem>
+          <MenuItem value="desc">Descending</MenuItem>
+        </Select>
+      </FormControl>
 
       <Grid container spacing={3}>
         {loading ? (

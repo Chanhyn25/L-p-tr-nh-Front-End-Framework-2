@@ -24,15 +24,6 @@
       "email": "nyn25104@gmail.com",
       "password": "$2a$10$cnUV9CcKswAECD8XfQmXbuz8uUxnSCjBtJPQvMoSOXIQ5BKkVUXZe",
       "id": 6
-    },
-    {
-      "email": "admin@admin.com",
-      "password": "$2a$10$jdM8APBlUPrpmMBOCmNErORUMCDaQBUDTReIqJJoUstIA3x535bui",
-      "id": 7,
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722861002/dwkwxb787gfrkj6wkgvn.png",
-      "name": "Nguyễn Thị Hạnh",
-      "phone": "0332209082",
-      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình"
     }
   ],
   "categorys": [
@@ -380,27 +371,6 @@
       "product_id": 39,
       "quantity": 985,
       "total": 71905
-    },
-    {
-      "id": 1722861027331,
-      "user_id": 7,
-      "product_id": 7,
-      "quantity": 1,
-      "total": 88
-    },
-    {
-      "id": 1722862088941,
-      "user_id": 2,
-      "product_id": 1,
-      "quantity": 8,
-      "total": 8
-    },
-    {
-      "id": 1722862092659,
-      "user_id": 2,
-      "product_id": 4,
-      "quantity": 8,
-      "total": 840
     }
   ],
   "orders": [
