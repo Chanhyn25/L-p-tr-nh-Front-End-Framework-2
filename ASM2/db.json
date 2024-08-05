@@ -21,19 +21,9 @@
       "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình"
     },
     {
-      "email": "hanhntph34748@fpt.edu.vn",
-      "password": "$2a$10$OKI/19nM19H64PfWyj55gOZqaBiPOSI5aVvwho9Wp2EB1k4vY8eC2",
-      "id": 5
-    },
-    {
       "email": "nyn25104@gmail.com",
       "password": "$2a$10$cnUV9CcKswAECD8XfQmXbuz8uUxnSCjBtJPQvMoSOXIQ5BKkVUXZe",
       "id": 6
-    },
-    {
-      "email": "anhntmph31703@fpt.edu.vn",
-      "password": "$2a$10$ApFMrQhmeyP/8QkH3AbrQOi6Sh4gQZxejB26rAN3kaGc69gLI/jz6",
-      "id": 7
     }
   ],
   "categorys": [
@@ -50,7 +40,7 @@
     {
       "name": "Mand I Sofa Two Seat",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.1",
-      "quantity": 1e+21,
+      "quantity": 1e21,
       "price": "1",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722612484/jce8mhmo5oainafts0oa.png",
       "id": 1
@@ -66,7 +56,7 @@
     {
       "name": "UNI I Sofa (DAB)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.4",
-      "quantity": 68,
+      "quantity": 66,
       "price": "105",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722613539/geyetkeukiukcdz7jjuh.png",
       "id": 4
@@ -74,7 +64,7 @@
     {
       "name": "UNI I Sofa (DCB)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.5",
-      "quantity": "22",
+      "quantity": 21,
       "price": "79",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722613714/ufjd6vwhijymlsksqkp6.png",
       "id": 5
@@ -98,7 +88,7 @@
     {
       "name": "UNI I Sofa (CAF)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.8",
-      "quantity": "25",
+      "quantity": 22,
       "price": "234",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722612890/xvod7io4hqgqe4ktmz5m.png",
       "id": 8
@@ -390,25 +380,11 @@
       "total": 120132085
     },
     {
-      "id": 1722863424157,
+      "id": 1722861106562,
       "user_id": 7,
-      "product_id": 26,
+      "product_id": 39,
       "quantity": 1,
-      "total": 51
-    },
-    {
-      "id": 1722863535962,
-      "user_id": 7,
-      "product_id": 17,
-      "quantity": 5,
-      "total": 265
-    },
-    {
-      "id": 1722863550852,
-      "user_id": 7,
-      "product_id": 8,
-      "quantity": 1,
-      "total": 234
+      "total": 73
     }
   ],
   "orders": [
@@ -431,6 +407,20 @@
       "user_id": 4,
       "quantity": 3,
       "total": 219,
+      "status": 1
+    },
+    {
+      "id": 1722861010497,
+      "user_id": 7,
+      "quantity": 5,
+      "total": 429,
+      "status": 1
+    },
+    {
+      "id": 1722861034793,
+      "user_id": 7,
+      "quantity": 5,
+      "total": 869,
       "status": 1
     }
   ],
@@ -462,6 +452,41 @@
       "quantity": 3,
       "total": 219,
       "id": 4
+    },
+    {
+      "id_order": 1722861010497,
+      "product_id": 39,
+      "quantity": 3,
+      "total": 219,
+      "id": 5
+    },
+    {
+      "id_order": 1722861010497,
+      "product_id": 4,
+      "quantity": 2,
+      "total": 210,
+      "id": 6
+    },
+    {
+      "id_order": 1722861034793,
+      "product_id": 8,
+      "quantity": 3,
+      "total": 702,
+      "id": 7
+    },
+    {
+      "id_order": 1722861034793,
+      "product_id": 5,
+      "quantity": 1,
+      "total": 79,
+      "id": 8
+    },
+    {
+      "id_order": 1722861034793,
+      "product_id": 7,
+      "quantity": 1,
+      "total": 88,
+      "id": 9
     }
   ]
 }
