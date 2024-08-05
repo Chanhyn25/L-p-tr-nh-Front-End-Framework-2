@@ -8,7 +8,7 @@
       "password": "$2a$10$EGHLwTUKq0qJ/jyzbikWKO/FRuy96YR.lj40cI9wx0Sf7GTk8lckG",
       "confirmPass": "123456",
       "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722662708/twhlqhhpobstzjox0pjg.png",
-      "role": 1,
+      "role": "1",
       "id": 2
     },
     {
