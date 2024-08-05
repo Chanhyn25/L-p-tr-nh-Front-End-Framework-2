@@ -196,12 +196,26 @@ const CheckoutPage: React.FC = () => {
                     <strong>Total:</strong>
                   </td>
                   <td className="px-6 py-3 text-sm font-medium text-gray-900">
-                    <strong>
+                    <strong >
                       $
                       {cartItems
                         .reduce((acc, item) => acc + item.total_cart, 0)
                         .toFixed(2)}
                     </strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    colSpan="3"
+                    className="px-6 py-3 text-right text-sm font-medium text-gray-900"
+                  >
+                    <strong>Payment Method:</strong>
+                  </td>
+                  <td className="px-6 py-3 text-sm font-medium text-green-600">
+                    <strong >
+                      Cash On Delivery (COD)
+                    </strong>
+
                   </td>
                 </tr>
               </tfoot>

@@ -160,7 +160,7 @@ const ProductEdit: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="bg-black-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+          className="bg-black text-white px-4 py-2 rounded hover:bg-gray-600"
         >
           Update
         </button>

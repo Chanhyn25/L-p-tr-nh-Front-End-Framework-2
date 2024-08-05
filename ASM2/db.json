@@ -2,70 +2,33 @@
   "users": [
     {
       "email": "nhi@gmail.com",
-      "password": "$2a$10$qxWcN2sMLRA8FK0YDUF3dea3SzHdg2BljA8z2feaEZokMlRj0sVQK",
-      "name": "name1",
-      "role": 1,
+      "name": "Nguyễn Thị Hạnh",
+      "phone": "0332209082",
+      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình",
+      "password": "$2a$10$EGHLwTUKq0qJ/jyzbikWKO/FRuy96YR.lj40cI9wx0Sf7GTk8lckG",
+      "confirmPass": "123456",
+      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722662708/twhlqhhpobstzjox0pjg.png",
+      "role": "1",
       "id": 2
     },
     {
       "email": "myanhnguyen419@gmail.com",
-      "password": "$2a$10$Rv8im07pz1LndO6n41JYHu.qW3bazDuMcSkCFoGi68SYkwvGH0iz.",
-      "id": 7,
-      "role": "1"
-    },
-    {
-      "email": "nyn25104@gmail.com",
-      "password": "$2a$10$rg8mhMRs3AdywlvgRf07nOw/PJqw.vKWatliVfoUh2VcHecFdB3LC",
-      "id": 8,
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722611793/cenpkrbyjngo0k6hwbf5.jpg",
+      "password": "$2a$10$sms1KSNOHWGs415my5GkeeaEwBSoeu1tmlusYZziU0e25vodoTXVO",
+      "id": 4,
+      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722662516/i4uqedvbjv94qsuyrdzl.png",
       "name": "Nguyễn Thị Hạnh",
       "phone": "0332209082",
       "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình"
-    },
-    {
-      "email": "nyn251014@gmail.com",
-      "password": "$2a$10$j.Y13RwLDxiOL3wk72G03Olt44E5/NA95CTxIWus6vLESnkh.qB22",
-      "id": 9,
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722613975/thzmex0huobmry5uwt5f.png",
-      "name": "Nguyễn Thị Hạnh",
-      "phone": "0332209082",
-      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình"
-    },
-    {
-      "email": "hanhnt@gmail.com",
-      "name": "Nguyễn Thị Hạnh",
-      "phone": "0332209082",
-      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình",
-      "password": "$2a$10$.iBvBUAPCH3uskZzEWseCelU8B0azPcOXbHzDAI0KSsp4nsOc.Eb2",
-      "confirmPass": "123456",
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722618059/kpw7lmrirhk2esk37vhz.png",
-      "role": "1",
-      "id": 10
-    },
-    {
-      "email": "nguyenyennhi09050@gmail.com",
-      "password": "$2a$10$a7nEr8H9coIRmmF2PobVDu/hg1HQexafk.d9Nac3Ne.cDHMXqHjsO",
-      "id": 11
     },
     {
       "email": "hanhntph34748@fpt.edu.vn",
-      "password": "$2a$10$d7npeXpdBmCnozxTGXAAn.dEvUJAeLQjAVPqFto93qlcgFHbLVppS",
-      "id": 12,
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722617189/py9bh5gfxf4atqkgnj7l.png",
-      "name": "Nguyễn Thị Hạnh",
-      "phone": "0332209082",
-      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình"
+      "password": "$2a$10$OKI/19nM19H64PfWyj55gOZqaBiPOSI5aVvwho9Wp2EB1k4vY8eC2",
+      "id": 5
     },
     {
-      "email": "Nhi111@gmail.com",
-      "password": "$2a$10$ebAvD1sM/kO50aMd8J9BtO63V7Mue9G5XFVhXJud747hwxqKDB1Ry",
-      "name": "Nguyễn Thị Hạnh",
-      "phone": "0332209082",
-      "address": "đường thành công, nhà số 4, làng la thạch, xã phương đình",
-      "confirmPass": "123456",
-      "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722617949/nvvn6x8os7hzfbxagk96.png",
-      "role": "0",
-      "id": 13
+      "email": "nyn25104@gmail.com",
+      "password": "$2a$10$cnUV9CcKswAECD8XfQmXbuz8uUxnSCjBtJPQvMoSOXIQ5BKkVUXZe",
+      "id": 6
     }
   ],
   "categorys": [
@@ -82,7 +45,7 @@
     {
       "name": "Mand I Sofa Two Seat",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.1",
-      "quantity": "1e+21",
+      "quantity": 1e+21,
       "price": "1",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722612484/jce8mhmo5oainafts0oa.png",
       "id": 1
@@ -90,7 +53,7 @@
     {
       "name": "UNI I Sofa (ACB)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.3",
-      "quantity": "1",
+      "quantity": 10,
       "price": "216",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722612866/f9rw4ybrbrkgokvwfjtd.png",
       "id": 3
@@ -378,7 +341,7 @@
     {
       "name": "UNI I Sofa (CF)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.39",
-      "quantity": 15,
+      "quantity": 11,
       "price": "73",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722613783/obgria3psffxzqshce7e.png",
       "id": 39
@@ -386,7 +349,7 @@
     {
       "name": "UNI I Sofa (CFK)",
       "description": "Uni L Sofa là thiết kế sofa module nằm trong BST Bespoke. UNI L Sofa mang đến khả năng tùy biến linh hoạt nhờ vào cấu tạo module. Ghế có khả năng tùy biến chi tiết, màu sắc, chất liệu để tạo nên phong cách, thẩm mỹ và không gian sống riêng biệt. Thiết kế được tạo hình tối giản, với các chi tiết được hoàn thiện tỉ mỉ, đặc trưng cho tạo hình mà NORDIC theo đuổi.40",
-      "quantity": 0,
+      "quantity": 10,
       "price": "214",
       "image": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722613626/wg9wdsu1bf0ei2uh3rcd.png",
       "id": 40
@@ -394,281 +357,78 @@
   ],
   "cart": [
     {
-      "id": 1722588696727,
-      "user_id": 3,
-      "product_id": 17,
-      "quantity": 1,
-      "total": 53
-    },
-    {
-      "id": 1722593359050,
-      "user_id": 3,
-      "product_id": 38,
-      "quantity": 7,
-      "total": 1043
-    },
-    {
-      "id": 1722606547907,
-      "user_id": 3,
-      "product_id": 39,
-      "quantity": 1,
-      "total": 73
-    },
-    {
-      "id": 1722607416752,
-      "user_id": 3,
+      "id": 1722662864130,
+      "user_id": 5,
       "product_id": 4,
-      "quantity": 4,
-      "total": 420
+      "quantity": 3,
+      "total": 315
     },
     {
-      "id": 1722613942787,
-      "user_id": 9,
-      "product_id": 40,
-      "quantity": 1,
-      "total": 214
+      "id": 1722668887915,
+      "user_id": 6,
+      "product_id": 3,
+      "quantity": 10,
+      "total": 2160
+    },
+    {
+      "id": 1722668943049,
+      "user_id": 6,
+      "product_id": 39,
+      "quantity": 985,
+      "total": 71905
     }
   ],
   "orders": [
     {
-      "id": 1,
-      "user_id": 4,
-      "quantity": 14,
-      "total": 1000000,
-      "status": 1
-    },
-    {
-      "id": 2,
+      "id": 1722619537874,
       "user_id": 3,
-      "quantity": 1,
-      "total": 50,
+      "quantity": 2,
+      "total": 217,
       "status": 0
     },
     {
-      "id": 1722525860150,
-      "user_id": 4,
-      "quantity": 14,
-      "total": 2443,
+      "id": 1722660471611,
+      "user_id": 3,
+      "quantity": 1,
+      "total": 73,
       "status": 1
     },
     {
-      "id": 1722526027502,
-      "user_id": 4,
-      "quantity": 14,
-      "total": 2443,
-      "status": 1
-    },
-    {
-      "id": 1722527186649,
+      "id": 1722662524079,
       "user_id": 4,
       "quantity": 3,
-      "total": 642,
-      "status": 1
-    },
-    {
-      "id": 1722527299584,
-      "user_id": 4,
-      "quantity": 2,
-      "total": 287,
-      "status": 1
-    },
-    {
-      "id": 1722527314959,
-      "user_id": 4,
-      "quantity": 4,
-      "total": 292,
-      "status": 1
-    },
-    {
-      "id": 1722530294284,
-      "user_id": 4,
-      "quantity": 5,
-      "total": 365,
-      "status": 1
-    },
-    {
-      "id": 1722530333303,
-      "user_id": 4,
-      "quantity": 2,
-      "total": 222,
-      "status": 1
-    },
-    {
-      "id": 1722535604221,
-      "user_id": 3,
-      "quantity": 1,
-      "total": 149,
-      "status": 1
-    },
-    {
-      "id": 1722535819791,
-      "user_id": 3,
-      "quantity": 2,
-      "total": 298,
-      "status": 1
-    },
-    {
-      "id": 1722535851125,
-      "user_id": 3,
-      "quantity": 1,
-      "total": 81,
-      "status": 1
-    },
-    {
-      "id": 1722593824840,
-      "user_id": 3,
-      "quantity": 2,
-      "total": 202,
-      "status": 1
-    },
-    {
-      "id": 1722600402849,
-      "user_id": 1722598026421,
-      "quantity": 1,
-      "total": 53,
-      "status": 1
-    },
-    {
-      "id": 1722613981913,
-      "user_id": 9,
-      "quantity": 10,
-      "total": 871,
-      "status": 1
-    },
-    {
-      "id": 1722617201742,
-      "user_id": 12,
-      "quantity": 11,
-      "total": 1179,
+      "total": 219,
       "status": 1
     }
   ],
   "orderDetails": [
     {
-      "id": 1,
-      "id_order": 1,
-      "product_id": 1,
-      "quantity": 2,
-      "total": 100
-    },
-    {
-      "id": 2,
-      "id_order": 1,
-      "product_id": 2,
-      "quantity": 1,
-      "total": 50
-    },
-    {
-      "id": 3,
-      "id_order": 2,
+      "id_order": 1722619537874,
       "product_id": 1,
       "quantity": 1,
-      "total": 50
+      "total": 1,
+      "id": 1
     },
     {
-      "id_order": 1722530294284,
-      "product_id": 39,
-      "quantity": 5,
-      "total": 365,
-      "id": 4
+      "id_order": 1722619537874,
+      "product_id": 3,
+      "quantity": 1,
+      "total": 216,
+      "id": 2
     },
     {
-      "id_order": 1722530333303,
+      "id_order": 1722660471611,
       "product_id": 39,
       "quantity": 1,
       "total": 73,
-      "id": 5
+      "id": 3
     },
     {
-      "id_order": 1722530333303,
-      "product_id": 38,
-      "quantity": 1,
-      "total": 149,
-      "id": 6
-    },
-    {
-      "id_order": 1722535604221,
-      "product_id": 38,
-      "quantity": 1,
-      "total": 149,
-      "id": 7
-    },
-    {
-      "id_order": 1722535819791,
-      "product_id": 38,
-      "quantity": 2,
-      "total": 298,
-      "id": 8
-    },
-    {
-      "id_order": 1722535851125,
-      "product_id": 34,
-      "quantity": 1,
-      "total": 81,
-      "id": 9
-    },
-    {
-      "id_order": 1722593824840,
-      "product_id": 17,
-      "quantity": 1,
-      "total": 53,
-      "id": 10
-    },
-    {
-      "id_order": 1722593824840,
-      "product_id": 38,
-      "quantity": 1,
-      "total": 149,
-      "id": 11
-    },
-    {
-      "id_order": 1722600402849,
-      "product_id": 17,
-      "quantity": 1,
-      "total": 53,
-      "id": 12
-    },
-    {
-      "id_order": 1722613981913,
+      "id_order": 1722662524079,
       "product_id": 39,
-      "quantity": 9,
-      "total": 657,
-      "id": 13
-    },
-    {
-      "id_order": 1722613981913,
-      "product_id": 40,
-      "quantity": 1,
-      "total": 214,
-      "id": 14
-    },
-    {
-      "id_order": 1722617201742,
-      "product_id": 4,
-      "quantity": 6,
-      "total": 630,
-      "id": 15
-    },
-    {
-      "id_order": 1722617201742,
-      "product_id": 5,
-      "quantity": 1,
-      "total": 79,
-      "id": 16
-    },
-    {
-      "id_order": 1722617201742,
-      "product_id": 1,
-      "quantity": 2,
-      "total": 2,
-      "id": 17
-    },
-    {
-      "id_order": 1722617201742,
-      "product_id": 8,
-      "quantity": 2,
-      "total": 468,
-      "id": 18
+      "quantity": 3,
+      "total": 219,
+      "id": 4
     }
   ]
 }
