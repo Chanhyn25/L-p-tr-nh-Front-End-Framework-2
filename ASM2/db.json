@@ -8,7 +8,7 @@
       "password": "$2a$10$EGHLwTUKq0qJ/jyzbikWKO/FRuy96YR.lj40cI9wx0Sf7GTk8lckG",
       "confirmPass": "123456",
       "avatar": "https://res.cloudinary.com/dhi3ud9d0/image/upload/v1722662708/twhlqhhpobstzjox0pjg.png",
-      "role": "1",
+      "role": 1,
       "id": 2
     },
     {
@@ -29,6 +29,11 @@
       "email": "nyn25104@gmail.com",
       "password": "$2a$10$cnUV9CcKswAECD8XfQmXbuz8uUxnSCjBtJPQvMoSOXIQ5BKkVUXZe",
       "id": 6
+    },
+    {
+      "email": "anhntmph31703@fpt.edu.vn",
+      "password": "$2a$10$ApFMrQhmeyP/8QkH3AbrQOi6Sh4gQZxejB26rAN3kaGc69gLI/jz6",
+      "id": 7
     }
   ],
   "categorys": [
@@ -376,6 +381,20 @@
       "product_id": 39,
       "quantity": 985,
       "total": 71905
+    },
+    {
+      "id": 1722860427402,
+      "user_id": 14,
+      "product_id": 39,
+      "quantity": 1645645,
+      "total": 120132085
+    },
+    {
+      "id": 1722861106562,
+      "user_id": 7,
+      "product_id": 39,
+      "quantity": 1,
+      "total": 73
     }
   ],
   "orders": [

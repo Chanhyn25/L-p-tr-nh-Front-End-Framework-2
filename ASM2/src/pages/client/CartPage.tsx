@@ -44,7 +44,12 @@ const CartPage: React.FC = () => {
       const cartItem = await CartService.getCartItemById(id);
 
       if (cartItem.quantity + change <= 0) {
-        alert("Cannot decrease quantity below 1");
+       
+        return;
+      }
+
+      if (cartItem.quantity + change > 5) {
+       
         return;
       }
 
@@ -239,12 +244,13 @@ const CartPage: React.FC = () => {
                         }
                       }}
                     >
-                     <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon>
+                      <ion-icon name="trash-outline" style={{ fontSize: '24px' }}></ion-icon>
                     </button>
                   </td>
                 </tr>
               ))
             ) : (
+             
               <tr>
                 <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
                   Your cart is empty
@@ -296,4 +302,3 @@ const CartPage: React.FC = () => {
 };
 
 export default CartPage;
-

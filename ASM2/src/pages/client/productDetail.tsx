@@ -103,12 +103,7 @@ const ProductDetail: React.FC = () => {
 
   };
 
-  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9]/g, '');
-    setQuantity(value ? parseInt(value, 10) : 1);
-  };
-
-  const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, product.quantity));
+  const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, Math.min(product.quantity, 5)));
   const handleDecrease = () => setQuantity((prev) => Math.max(prev - 1, 1));
 
   return (
@@ -149,7 +144,7 @@ const ProductDetail: React.FC = () => {
                 id="Quantity"
                 className="form-control quantity text-center w-12"
                 value={quantity}
-                onChange={handleQuantityChange}
+                disabled
                 placeholder="Số lượng"
               />
               <button
