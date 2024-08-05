@@ -30,8 +30,8 @@ const ProductDetail: React.FC = () => {
   const userString = localStorage.getItem("user");
 
   const user: User | null = userString ? JSON.parse(userString) : null;
-  useEffect(() => {
 
+  useEffect(() => {
     if (user?.role === 1) {
       nav("/admin");
     }
@@ -75,11 +75,23 @@ const ProductDetail: React.FC = () => {
           (item) => item.product_id === product.id
         );
 
+        let totalQuantity = 0;
+        if (existingCartItem) {
+          totalQuantity = existingCartItem.quantity + quantity;
+        } else {
+          totalQuantity = quantity;
+        }
+
+        if (totalQuantity > 5) {
+          alert("You cannot add more than 5 items of this product to the cart.");
+          return;
+        }
+
         if (existingCartItem) {
           const updatedCartItem = {
             ...existingCartItem,
-            quantity: existingCartItem.quantity + quantity,
-            total: (existingCartItem.quantity + quantity) * product.price,
+            quantity: totalQuantity,
+            total: totalQuantity * product.price,
           };
 
           await CartService.updateCartItem(updatedCartItem.id, updatedCartItem);
@@ -100,7 +112,6 @@ const ProductDetail: React.FC = () => {
         console.error("Error updating cart:", error);
       }
     }
-
   };
 
   const handleIncrease = () => setQuantity((prev) => Math.min(prev + 1, Math.min(product.quantity, 5)));
@@ -110,7 +121,7 @@ const ProductDetail: React.FC = () => {
     <div>
       <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
         <img
-          src={`${product.image}`}
+          src={product.image}
           alt={product.name}
           className="w-full h-64 object-cover mb-4 rounded"
         />
@@ -195,7 +206,7 @@ const ProductDetail: React.FC = () => {
             >
               <Link to={`/productDetail/${similarProduct.id}`}>
                 <img
-                  src={`${similarProduct.image}`}
+                  src={similarProduct.image}
                   alt={similarProduct.name}
                   className="w-full h-40 object-cover mb-2 rounded"
                 />
